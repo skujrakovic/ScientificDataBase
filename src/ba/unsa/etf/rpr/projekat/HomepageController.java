@@ -34,4 +34,19 @@ public class HomepageController {
             e.printStackTrace();
         }
     }
+    public void LogIn(ActionEvent actionEvent) {
+        Parent root = null;
+        try {
+            Stage myStage=new Stage();
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            LogInController lctrl=new LogInController();
+            loaderr.setController(lctrl);
+            root = loaderr.load();
+            myStage.setTitle("Log In");
+            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            myStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

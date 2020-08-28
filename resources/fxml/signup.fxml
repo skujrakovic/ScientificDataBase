@@ -31,43 +31,68 @@
                <Image url="@../images/logo.png" />
            </image>
        </ImageView>
-      <Label text="Name: " GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label text="Surname: " GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label text="Username: " GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label text="E-mail: " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label text="Password: " GridPane.halignment="RIGHT" GridPane.rowIndex="5">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <TextField fx:id="fldName" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
-      <TextField fx:id="fldSurname" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" />
-      <TextField fx:id="fldUsername" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
-      <TextField fx:id="fldEmail" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" />
-      <TextField fx:id="fldPassword" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="5" />
-      <Button fx:id="btnSignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="Sign up" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
-         <GridPane.margin>
-            <Insets top="10.0" />
-         </GridPane.margin>
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
+      
+            <GridPane alignment="CENTER" maxWidth="350.0" minWidth="350.0" prefHeight="300.0" prefWidth="350.0" styleClass="form-background" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="6" GridPane.valignment="CENTER">
+               <children>
+                  <Label text="Name: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Surname: " GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Username: " GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="E-mail: " GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Password: " GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+
+                  <TextField fx:id="fldName" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="fldSurname" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="fldUsername" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="fldEmail" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
+                  <TextField fx:id="fldPassword" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" />
+                  <Button fx:id="btnSignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="Sign up" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" />
+            <ColumnConstraints hgrow="NEVER" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints />
+            <RowConstraints vgrow="ALWAYS" />
+         </rowConstraints>
+            </GridPane>
+   
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <children>
             <Label text="Have an account? " />
-            <Hyperlink fx:id="linkLogIn" text="Log in" />
+            <Hyperlink fx:id="linkLogIn" onAction="#LogIn" text="Log in" />
          </children>
       </HBox>
    </children>

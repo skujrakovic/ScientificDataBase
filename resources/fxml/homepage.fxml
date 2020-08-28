@@ -37,7 +37,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnLogIn" mnemonicParsing="false" text="Log in">
+            <Button fx:id="btnLogIn" mnemonicParsing="false" text="Log in" onAction="#LogIn">
                <font>
                   <Font size="13.0" />
                </font>
