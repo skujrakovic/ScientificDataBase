@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class HomepageController {
-    Button btnSignUp, btnLogIn, btnContinue;
+    public Button btnSignUp, btnLogIn, btnContinue;
     @FXML
     public void initialize() {
 

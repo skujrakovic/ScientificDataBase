@@ -14,8 +14,8 @@ import java.io.IOException;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class LogInController {
-    TextField fldUsername, fldPassword;
-    Hyperlink linkSignUp;
+    public TextField fldUsername, fldPassword;
+    public Hyperlink linkSignUp;
     @FXML
     public void initialize(){
 

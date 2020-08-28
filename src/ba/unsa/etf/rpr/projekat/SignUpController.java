@@ -15,13 +15,14 @@ import java.io.IOException;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class SignUpController {
-    Button btnSignUp;
-    Hyperlink linkLogIn;
-    TextField fldName, fldSurname, fldUsername, fldEmail, fldPassword;
+    public Button btnSignUp;
+    public Hyperlink linkLogIn;
+    public TextField fldName, fldSurname, fldUsername, fldEmail, fldPassword;
+    private UserModel userModel = UserModel.getInstance();
     @FXML
     public void initialize() {
-
     }
+
     public void LogIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
@@ -36,5 +37,9 @@ public class SignUpController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void SignUp(ActionEvent actionEvent){
+        User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
+        userModel.addUser(newUser);
     }
 }

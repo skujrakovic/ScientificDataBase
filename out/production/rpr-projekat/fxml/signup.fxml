@@ -65,7 +65,7 @@
                   <TextField fx:id="fldUsername" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="fldEmail" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
                   <TextField fx:id="fldPassword" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" />
-                  <Button fx:id="btnSignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="Sign up" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                  <Button fx:id="btnSignUp" onAction="#SignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="Sign up" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin>
