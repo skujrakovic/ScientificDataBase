@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/signup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/Homepage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/HomepageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/HomepageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/homepage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/signup.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/homepage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/HomepageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,7 +93,7 @@
       <workItem from="1597662163916" duration="667000" />
       <workItem from="1597672605625" duration="613000" />
       <workItem from="1598525579881" duration="6394000" />
-      <workItem from="1598615836724" duration="5336000" />
+      <workItem from="1598615836724" duration="6402000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1597164529250</created>
@@ -129,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598617887141</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created a view for signing up">
+      <created>1598635871235</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598635871235</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +150,8 @@
     <MESSAGE value="Created the homepage view" />
     <MESSAGE value="Made some changes to the homepage view" />
     <MESSAGE value="Made some more changes to the homepage view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some more changes to the homepage view" />
+    <MESSAGE value="Created a view for signing up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a view for signing up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598526646867">
@@ -153,30 +162,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598526803216" />
-    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1598617886066">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1598635869511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598617886066" />
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598635869511" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1598526661614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598526661614" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1598635736796">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1598636873168">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598635736796" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1598635736796">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598636873168" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1598636873167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598635736796" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1598635736796">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598636873167" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1598636873167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598635736796" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1598635736796">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598636873167" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1598636873167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598635736796" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598636873167" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1598617665407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

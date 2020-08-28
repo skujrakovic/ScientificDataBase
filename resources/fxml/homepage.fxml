@@ -29,7 +29,7 @@
       <VBox prefHeight="200.0" alignment="CENTER" prefWidth="100.0" spacing="30.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" >
          <children>
 
-            <Button fx:id="btnSignUp" contentDisplay="CENTER" mnemonicParsing="false" text="Sign up">
+            <Button fx:id="btnSignUp" contentDisplay="CENTER" mnemonicParsing="false" text="Sign up" onAction="#SignUp">
                <font>
                   <Font size="13.0" />
                </font>
