@@ -11,6 +11,14 @@
     -fx-padding: 1;
 }
 
+.incorrectField {
+    -fx-control-inner-background: lightcoral;
+}
+.correctField {
+    -fx-control-inner-background: transparent;
+}
+
+
 #btnSignUp {
     -fx-background-color:
             #000000,

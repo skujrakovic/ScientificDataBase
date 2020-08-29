@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class UserModel {
     private static UserModel instance;
     private static Connection conn;
-    private PreparedStatement addUserQuery;
+    private PreparedStatement addUserQuery, findUserQuery;
 
     public static UserModel getInstance() {
         if (instance == null) instance = new UserModel();
@@ -32,11 +32,13 @@ public class UserModel {
             e.printStackTrace();
         }
         try {
-            addUserQuery = conn.prepareStatement("UPDATE user SET name=?, surname=?, email=?, password=? WHERE username=?");
+            addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
+            findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
         } catch (SQLException e) {
             regenerateDatabase();
             try {
-                addUserQuery = conn.prepareStatement("UPDATE user SET name=?, surname=?, email=?, password=? WHERE username=?");
+                addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
+                findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username = ?");
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -90,12 +92,13 @@ public class UserModel {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:users.db");
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
+
             try {
                 addUserQuery.setString(1, user.getName());
                 addUserQuery.setString(2, user.getSurname());
                 addUserQuery.setString(3, user.getEmail());
-                addUserQuery.setString(4, user.getPassword());
-                addUserQuery.setString(5, user.getUsername());
+                addUserQuery.setString(4, user.getUsername());
+                addUserQuery.setString(5, user.getPassword());
                 addUserQuery.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -104,5 +107,23 @@ public class UserModel {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public boolean usernameExists(String username){
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
+
+            try {
+                findUserQuery.setString(1, username);
+                ResultSet rs = findUserQuery.executeQuery();
+                return rs.next();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
