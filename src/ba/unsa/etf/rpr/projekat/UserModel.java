@@ -13,6 +13,9 @@ public class UserModel {
     private static Connection conn;
     private PreparedStatement addUserQuery, findUserQuery;
 
+
+    private SimpleObjectProperty<User> currentUser = new SimpleObjectProperty<>();
+
     public static UserModel getInstance() {
         if (instance == null) instance = new UserModel();
         return instance;
@@ -88,6 +91,18 @@ public class UserModel {
     }
 
 
+    public User getCurrentUser() {
+        return currentUser.get();
+    }
+
+    public SimpleObjectProperty<User> currentUserProperty() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser.set(currentUser);
+    }
+
     public void addUser(User user) {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:users.db");
@@ -125,5 +140,26 @@ public class UserModel {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void logInUser(String username){
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
+
+            try {
+                findUserQuery.setString(1, username);
+                ResultSet rs = findUserQuery.executeQuery();
+                if (rs.next()){
+                    User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                    currentUser.set(user);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -20,8 +21,10 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class LogInController {
     public TextField fldUsername;
     public PasswordField fldPassword;
+    public Button btnLogIn;
     public ImageView imgLogo;
     public Hyperlink linkSignUp;
+    private UserModel userModel = UserModel.getInstance();
     @FXML
     public void initialize(){
         imgLogo.setPickOnBounds(true);
@@ -53,6 +56,23 @@ public class LogInController {
             myStage.setTitle("Sign Up");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void LogIn(ActionEvent actionEvent){
+        Parent root = null;
+        try {
+            Stage myStage=new Stage();
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
+            MainController lctrl=new MainController();
+            loaderr.setController(lctrl);
+            root = loaderr.load();
+            myStage.setTitle("ScienceChest");
+            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            myStage.show();
+            userModel.logInUser(fldUsername.getText());
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
