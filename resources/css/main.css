@@ -1,11 +1,13 @@
+.background {
+    -fx-background-color: lavender;
+}
+
 #btnSearch{
     -fx-background-radius: 5em;
     -fx-min-width: 30px;
     -fx-min-height: 30px;
     -fx-max-width: 30px;
     -fx-max-height: 30px;
-    -fx-background-image: url('/images/search.png');
-    -fx-image: url('/images/search.png');
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }

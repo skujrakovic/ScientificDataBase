@@ -3,9 +3,11 @@
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane prefHeight="500.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@/css/main.css" />
     </stylesheets>
@@ -13,7 +15,9 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="20.0" prefHeight="40.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="20.0" prefHeight="40.0" />
    </rowConstraints>
    <children>
       <MenuBar GridPane.columnSpan="5">
@@ -36,10 +40,110 @@
         </menus>
       </MenuBar>
       <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-      <Button fx:id="btnSearch" prefWidth="30" prefHeight="30" minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+      <Button fx:id="btnSearch" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30" mnemonicParsing="false" prefHeight="30" prefWidth="30" GridPane.columnIndex="3" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin></Button>
+      <ImageView fx:id="imgArts" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/art.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgBusiness" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/business.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgChemistry" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/chemistry.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgGeography" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/geography.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgEconomics" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/economics.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgEngineering" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/computer.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgBiology" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/biology.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgMedicine" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/medicine.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgPhysics" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/physics.png" />
+          </image>
+      </ImageView>
+      <ImageView fx:id="imgPsychology" fitHeight="120.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <image>
+              <Image url="@../images/psychology.png" />
+          </image>
+      </ImageView>
+      <Label text="Arts &amp; Humanities" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Business &amp; Management" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Chemistry &amp; Materials Science" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Earth Sciences &amp; Geography" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Economics &amp; Finance" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Engineering &amp; Computer Science" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Life Sciences &amp; Biology" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Medical and Health Sciences" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Physics &amp; Mathematics" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Social Sciences &amp; Psychology" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
