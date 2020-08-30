@@ -52,4 +52,21 @@ public class HomepageController {
             e.printStackTrace();
         }
     }
+
+    public void Continue (ActionEvent actionEvent){
+        Parent root = null;
+        try {
+            Stage myStage=new Stage();
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
+            MainController lctrl=new MainController();
+            loaderr.setController(lctrl);
+            root = loaderr.load();
+            myStage.setTitle("ScienceChest");
+            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            myStage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
