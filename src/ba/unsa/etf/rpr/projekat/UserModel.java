@@ -28,7 +28,7 @@ public class UserModel {
     private UserModel() {
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -69,7 +69,7 @@ public class UserModel {
     private void regenerateDatabase() {
         Scanner ulaz = null;
         try {
-            ulaz = new Scanner(new FileInputStream("users.db.sql"));
+            ulaz = new Scanner(new FileInputStream("database.db.sql"));
             String sqlUpit = "";
             while (ulaz.hasNext()) {
                 sqlUpit += ulaz.nextLine();
@@ -105,7 +105,7 @@ public class UserModel {
 
     public void addUser(User user) {
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
 
             try {
@@ -125,7 +125,7 @@ public class UserModel {
     }
     public boolean usernameExists(String username){
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
 
             try {
@@ -144,7 +144,7 @@ public class UserModel {
 
     public void logInUser(String username){
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:users.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
 
             try {

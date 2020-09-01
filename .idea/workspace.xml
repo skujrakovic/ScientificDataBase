@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
+    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="Enabled login">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/projekat/UserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/projekat/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.db.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,22 +33,22 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="users" type="feb32156:DbDataSourceImpl" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="users" type="feb32156:DbDataSourceImpl" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="users" type="feb32156:DbDataSourceImpl" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="users" type="feb32156:DbDataSourceImpl" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="user: table" type="3d80ac25:SqliteImplModel$Table" />
@@ -56,6 +61,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -146,7 +152,10 @@
       <workItem from="1598784600190" duration="964000" />
       <workItem from="1598785572751" duration="791000" />
       <workItem from="1598786918658" duration="1528000" />
-      <workItem from="1598805093710" duration="1478000" />
+      <workItem from="1598805093710" duration="4476000" />
+      <workItem from="1598863779449" duration="1999000" />
+      <workItem from="1598954699258" duration="1503000" />
+      <workItem from="1598967931872" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1597164529250</created>
@@ -246,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598788396101</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Enabled login">
+      <created>1598806601795</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1598806601795</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,45 +283,46 @@
     <MESSAGE value="Added validation for signing up" />
     <MESSAGE value="Continue without registration button opens a new view" />
     <MESSAGE value="Completed the main view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed the main view" />
+    <MESSAGE value="Enabled login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enabled login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598649308234" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1598805242474">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1598985986818">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598805242474" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598985986818" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598784639571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598784639571" />
-    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1598788394945">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1598806600420">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598788394945" />
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598806600420" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1598526661614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598526661614" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1598806469492">
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1598822220718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598806469492" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1598806469492">
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598822220718" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1598822220717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598806469492" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1598806469491">
+    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598822220717" />
+    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1598822220717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598806469491" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1598806469492">
+    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598822220717" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1598822220717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598806469492" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598822220717" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1598784592608">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -334,10 +351,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598788398713" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1598726789531">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1598985951560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598726789531" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598985951560" />
     <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1598646891318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
