@@ -48,7 +48,7 @@ public class ScienceChestDAO {
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
             getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
-            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE '%?%'");
+            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE '%' + ? + '%'");
             getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
         } catch (SQLException e) {
             regenerateDatabase();
@@ -56,7 +56,7 @@ public class ScienceChestDAO {
                 addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
                 findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username = ?");
                 getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
-                getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper where title LIKE '%?%'");
+                getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE '%' + ? + '%'");;
                 getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -230,7 +230,7 @@ public class ScienceChestDAO {
     public void getScientificPaperByTitle(String title){
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
+            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE '%' + ? + '%'");
 
             try {
                 getScientificPapersByTitle.setString(1, title);

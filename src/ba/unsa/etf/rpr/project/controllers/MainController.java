@@ -44,6 +44,9 @@ public class MainController {
         imgBusiness.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("BUSINESS"));
         });
+        imgChemistry.setOnMouseClicked((MouseEvent e) -> {
+            openResultsFor(ScientificPaperGenre.valueOf("CHEMISTRY"));
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
