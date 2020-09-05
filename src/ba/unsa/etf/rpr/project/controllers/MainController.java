@@ -50,6 +50,9 @@ public class MainController {
         imgEconomics.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("ECONOMICS"));
         });
+        imgEngineering.setOnMouseClicked((MouseEvent e) -> {
+            openResultsFor(ScientificPaperGenre.valueOf("ENGINEERING"));
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
