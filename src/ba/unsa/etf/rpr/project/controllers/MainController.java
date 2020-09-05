@@ -38,6 +38,9 @@ public class MainController {
         imgArts.setOnMouseClicked((MouseEvent e) -> {
           openResultsFor(ScientificPaperGenre.valueOf("ART"));
         });
+        imgBiology.setOnMouseClicked((MouseEvent e) -> {
+            openResultsFor(ScientificPaperGenre.valueOf("BIOLOGY"));
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
