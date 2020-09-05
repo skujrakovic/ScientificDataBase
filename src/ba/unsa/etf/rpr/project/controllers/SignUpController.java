@@ -1,7 +1,8 @@
-package ba.unsa.etf.rpr.projekat;
+package ba.unsa.etf.rpr.project.controllers;
 
+import ba.unsa.etf.rpr.project.javabeans.User;
+import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,7 +23,7 @@ public class SignUpController {
     public TextField fldName, fldSurname, fldUsername, fldEmail;
     public PasswordField fldPassword;
     public ImageView imgLogo;
-    private UserModel userModel = UserModel.getInstance();
+    private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
     @FXML
     public void initialize() {
@@ -107,7 +108,7 @@ public class SignUpController {
         if (fldEmail.getText().equals("") || !fldEmail.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) fldEmail.getStyleClass().add("incorrectField");
         if (fldPassword.getText().equals("") || fldPassword.getText().length() < 8 || !fldPassword.getText().matches("^[a-zA-Z0-9]+$"))
             fldPassword.getStyleClass().add("incorrectField");
-        if(userModel.usernameExists(fldUsername.getText())) {
+        if(scienceChestDAO.usernameExists(fldUsername.getText())) {
             fldUsername.getStyleClass().add("incorrectField");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
@@ -119,7 +120,7 @@ public class SignUpController {
         String check = fldUsername.getStyleClass().toString()+fldName.getStyleClass().toString()+fldSurname.getStyleClass().toString()+fldEmail.getStyleClass().toString()+fldPassword.getStyleClass().toString();
         if(!check.contains("incorrectField")) {
             User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
-            userModel.addUser(newUser);
+            scienceChestDAO.addUser(newUser);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);

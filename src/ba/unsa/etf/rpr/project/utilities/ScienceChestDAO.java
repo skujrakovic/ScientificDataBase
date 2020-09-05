@@ -1,23 +1,33 @@
-package ba.unsa.etf.rpr.projekat;
+package ba.unsa.etf.rpr.project.utilities;
 
+import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
+import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
+import ba.unsa.etf.rpr.project.javabeans.ScientificPaper;
+import ba.unsa.etf.rpr.project.javabeans.User;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class UserModel {
-    private static UserModel instance;
+public class ScienceChestDAO {
+    private static ScienceChestDAO instance;
     private static Connection conn;
-    private PreparedStatement addUserQuery, findUserQuery;
+    private PreparedStatement addUserQuery, findUserQuery, getScientificPapersByGenre, getScientificPapersByTitle, getAuthorsForScientificPaper;
 
 
     private SimpleObjectProperty<User> currentUser = new SimpleObjectProperty<>();
 
-    public static UserModel getInstance() {
-        if (instance == null) instance = new UserModel();
+    public List<ScientificPaper> getResults() {
+        return results;
+    }
+
+    private List<ScientificPaper> results = new ArrayList<>();
+
+    public static ScienceChestDAO getInstance() {
+        if (instance == null) instance = new ScienceChestDAO();
         return instance;
     }
 
@@ -25,7 +35,7 @@ public class UserModel {
         return conn;
     }
 
-    private UserModel() {
+    private ScienceChestDAO() {
         try {
             Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
@@ -37,11 +47,17 @@ public class UserModel {
         try {
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
+            getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE '%?%'");
+            getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
         } catch (SQLException e) {
             regenerateDatabase();
             try {
                 addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
                 findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username = ?");
+                getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+                getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper where title LIKE '%?%'");
+                getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -153,6 +169,76 @@ public class UserModel {
                 if (rs.next()){
                     User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                     currentUser.set(user);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ScientificPaper getScientificPaperFromResultSet(ResultSet rs) throws SQLException {
+        return new ScientificPaper(rs.getString("title"), rs.getString("link"), rs.getString("summary"), rs.getInt("year"), ScientificPaperGenre.valueOf(rs.getString("genre")), ScientificPaperType.valueOf(rs.getString("type")) );
+    }
+
+    public ArrayList<String> getAuthorsForScientificPaper (Integer id) {
+        ArrayList<String> authors = new ArrayList<>();
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
+            getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+
+            try {
+                getAuthorsForScientificPaper.setString(1, String.valueOf(id));
+                ResultSet rs = getAuthorsForScientificPaper.executeQuery();
+                while (rs.next()) {
+                    authors.add(rs.getString("full_name"));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return authors;
+    }
+
+    public void getScientificPaperByGenre (ScientificPaperGenre genre){
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
+            getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+
+            try {
+                getScientificPapersByGenre.setString(1, genre.toString());
+                ResultSet rs = getScientificPapersByGenre.executeQuery();
+                while (rs.next()) {
+                    ScientificPaper paper = getScientificPaperFromResultSet(rs);
+                    paper.setAuthors(getAuthorsForScientificPaper(rs.getInt("sid")));
+                    results.add(paper);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getScientificPaperByTitle(String title){
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
+            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
+
+            try {
+                getScientificPapersByTitle.setString(1, title);
+                ResultSet rs = getScientificPapersByTitle.executeQuery();
+                while (rs.next()) {
+                    ScientificPaper paper = getScientificPaperFromResultSet(rs);
+                    paper.setAuthors(getAuthorsForScientificPaper(rs.getInt("sid")));
+                    results.add(paper);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

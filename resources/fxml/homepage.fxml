@@ -2,6 +2,7 @@
 
 <?import java.net.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -19,6 +20,7 @@
       <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
    </rowConstraints>
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
@@ -26,10 +28,10 @@
             <Image url="@../images/logo.png" />
          </image>
       </ImageView>
-      <VBox prefHeight="200.0" alignment="CENTER" prefWidth="100.0" spacing="30.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" >
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <children>
 
-            <Button fx:id="btnSignUp" contentDisplay="CENTER" mnemonicParsing="false" text="Sign up" onAction="#SignUp">
+            <Button fx:id="btnSignUp" contentDisplay="CENTER" mnemonicParsing="false" onAction="#SignUp" text="Sign up">
                <font>
                   <Font size="13.0" />
                </font>
@@ -37,16 +39,38 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnLogIn" mnemonicParsing="false" text="Log in" onAction="#LogIn">
+            <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#LogIn" text="Log in">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnContinue" mnemonicParsing="false" text="Continue without registration" GridPane.halignment="CENTER" GridPane.rowIndex="3" onAction="#Continue">
+            <Button fx:id="btnContinue" mnemonicParsing="false" onAction="#Continue" text="Continue without registration" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="13.0" />
                </font></Button>
          </children>
       </VBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="60.0">
+               <children>
+                  <Label text="EN " />
+                  <Button fx:id="btnEnglish" mnemonicParsing="false" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="60.0">
+               <children>
+                  <Label text="BOS " />
+                  <Button fx:id="btnBosnian" mnemonicParsing="false" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </HBox>
    </children>
 </GridPane>

@@ -88,3 +88,23 @@
     -fx-font-size: 12px;
     -fx-font-weight:bold;
 }
+
+#btnBosnian{
+    -fx-background-radius: 5em;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btnEnglish{
+    -fx-background-radius: 5em;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

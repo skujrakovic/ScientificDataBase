@@ -1,4 +1,7 @@
-package ba.unsa.etf.rpr.projekat;
+package ba.unsa.etf.rpr.project.javabeans;
+
+import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
+import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
 
 import java.util.ArrayList;
 
@@ -9,14 +12,13 @@ public class ScientificPaper {
     ScientificPaperType type;
     ArrayList<String> authors;
 
-    public ScientificPaper(String title, String link, String summary, Integer yearOfPublication, ScientificPaperGenre genre, ScientificPaperType type, ArrayList<String> authors) {
+    public ScientificPaper(String title, String link, String summary, Integer yearOfPublication, ScientificPaperGenre genre, ScientificPaperType type) {
         this.title = title;
         this.link = link;
         this.summary = summary;
         this.yearOfPublication = yearOfPublication;
         this.genre = genre;
         this.type = type;
-        this.authors = authors;
     }
 
     public String getTitle() {

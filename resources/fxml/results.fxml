@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="500.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@/css/results.css" />
+    </stylesheets>
+   <columnConstraints>
+       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="ALWAYS" minWidth="30.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+   </rowConstraints>
+    <children>
+        <MenuBar GridPane.columnSpan="5">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <TableView fx:id="tableViewResults" prefHeight="470.0" prefWidth="314.0" styleClass="table-view" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.rowSpan="4" GridPane.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colTitle" minWidth="78.5" prefWidth="151.3999878168106" text="Title" />
+          <TableColumn fx:id="colAuthors" minWidth="55.20001220703125" prefWidth="110.20001220703125" text="Authors" />
+            <TableColumn fx:id="colGenre" minWidth="78.5" prefWidth="175.4000244140625" text="Genre" />
+            <TableColumn fx:id="colType" prefWidth="89.4000244140625" text="Type" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label text="Filter by genre:  " GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <ChoiceBox fx:id="choiceGenre" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+         <children>
+            <Label text="See more information " />
+            <Hyperlink text="here" />
+         </children>
+      </VBox>
+      <Button fx:id="btnDownload" mnemonicParsing="false" text="Download abstract" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <Button fx:id="btnConfirm" mnemonicParsing="false" text="Confirm" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="2" />
+      <Label text="Filter by type:  " GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+    </children>
+</GridPane>
