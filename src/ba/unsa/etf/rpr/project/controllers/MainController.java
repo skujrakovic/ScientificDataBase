@@ -62,6 +62,9 @@ public class MainController {
         imgPsychology.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("PSYCHOLOGY"));
         });
+        imgPhysics.setOnMouseClicked((MouseEvent e) -> {
+            openResultsFor(ScientificPaperGenre.valueOf("PHYSICS"));
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
