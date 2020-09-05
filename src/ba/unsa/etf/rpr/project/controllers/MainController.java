@@ -36,10 +36,13 @@ public class MainController {
         btnSearch.setGraphic(img);
         fldSearch.setTooltip(new Tooltip("Search by title"));
         imgArts.setOnMouseClicked((MouseEvent e) -> {
-          openResultsFor(ScientificPaperGenre.valueOf("ART"));
+            openResultsFor(ScientificPaperGenre.valueOf("ART"));
         });
         imgBiology.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("BIOLOGY"));
+        });
+        imgBusiness.setOnMouseClicked((MouseEvent e) -> {
+            openResultsFor(ScientificPaperGenre.valueOf("BUSINESS"));
         });
     }
 
