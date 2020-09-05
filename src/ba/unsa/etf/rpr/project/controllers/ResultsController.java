@@ -36,6 +36,19 @@ public class ResultsController {
         colType.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ScientificPaperType>("type"));
         colTitle.setCellValueFactory(new PropertyValueFactory<ScientificPaper, String>("title"));
         colGenre.setCellValueFactory(new PropertyValueFactory<ScientificPaper, ScientificPaperGenre>("genre"));
+        colGenre.setCellFactory(column-> new TableCell<>() {
+            @Override
+            protected void updateItem(ScientificPaperGenre genre, boolean empty) {
+                super.updateItem(genre, empty);
+                if (genre == null || empty) {
+                    setGraphic(null);
+                } else {
+                    Label label = new Label (ScientificPaperGenre.convert(genre));
+                    label.setStyle("-fx-text-fill: white;");
+                    setGraphic(label);
+                }
+            }
+        });
         colAuthors.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ArrayList<String>>("authors"));
         colAuthors.setCellFactory(column-> new TableCell<>() {
             @Override
