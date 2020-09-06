@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 public class ResultsController {
@@ -27,6 +28,8 @@ public class ResultsController {
     public TableColumn<ScientificPaper, ScientificPaperGenre> colGenre;
     public TableColumn<ScientificPaper, ScientificPaperType> colType;
     public Hyperlink link;
+    public ChoiceBox<ScientificPaperGenre> choiceGenre;
+    public ChoiceBox<ScientificPaperType> choiceType;
     private ObservableList<ScientificPaper> scientificPapersList;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
@@ -78,6 +81,8 @@ public class ResultsController {
                 link.setDisable(false);
             }
         });
+        choiceGenre.setItems(FXCollections.observableArrayList(ScientificPaperGenre.values()));
+        choiceType.setItems(FXCollections.observableArrayList(ScientificPaperType.values()));
 
     }
 
@@ -92,5 +97,15 @@ public class ResultsController {
                 e1.printStackTrace();
             }
         }
+    }
+
+    public void Filter (ActionEvent actionEvent){
+        if(!choiceGenre.getSelectionModel().isEmpty()) {
+            scientificPapersList=scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getGenre().equals(choiceGenre.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
+        }
+        if(!choiceType.getSelectionModel().isEmpty()) {
+            scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getType().equals(choiceType.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));;
+        }
+        tableViewResults.setItems(scientificPapersList);
     }
 }
