@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
+    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="Filled the choiceboxes located in &quot;Add new scientific paper&quot; view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/enums/ScientificPaperGenre$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/enums/ScientificPaperGenre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/enums/ScientificPaperGenre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/enums/ScientificPaperType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/enums/ScientificPaperType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/add.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/add.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/AddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/AddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/enums/ScientificPaperGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/enums/ScientificPaperGenre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +178,7 @@
       <workItem from="1599384112696" duration="1991000" />
       <workItem from="1599392523612" duration="1766000" />
       <workItem from="1599406258431" duration="745000" />
-      <workItem from="1599407012611" duration="2094000" />
+      <workItem from="1599407012611" duration="7397000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1597164529250</created>
@@ -384,14 +390,20 @@
       <option name="project" value="LOCAL" />
       <updated>1599393097335</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Filled the choiceboxes located in &quot;Add new scientific paper&quot; view">
+      <created>1599410716045</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1599410716045</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made some more changes to the homepage view" />
     <MESSAGE value="Created a view for signing up" />
     <MESSAGE value="Made changes to SignUp view &amp; added a SignUpController" />
     <MESSAGE value="Created a Log in view" />
@@ -416,7 +428,8 @@
     <MESSAGE value="Implemented search by title" />
     <MESSAGE value="Implemented the &quot;Close&quot; Menu Item" />
     <MESSAGE value="Implemented the &quot;Add&quot; Menu Item which opens a newly created view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the &quot;Add&quot; Menu Item which opens a newly created view" />
+    <MESSAGE value="Filled the choiceboxes located in &quot;Add new scientific paper&quot; view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filled the choiceboxes located in &quot;Add new scientific paper&quot; view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
@@ -439,30 +452,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599253614532" />
-    <state x="319" y="8" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599393096661">
+    <state x="319" y="8" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599426552969">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="319" y="8" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599393096661" />
+    <state x="319" y="8" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599426552969" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1598526661614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598526661614" />
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1599410637725">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1599426553092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599410637725" />
-    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1599410637725">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599426553092" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1599426553092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599410637725" />
-    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1599410637725">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599426553092" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1599426553092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599410637725" />
-    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1599410637725">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599426553092" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1599426553092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599410637725" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599426553092" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1599344438896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -487,10 +500,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598646895201" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599393100742">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599410757612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599393100742" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599410757612" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599406310199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -15,7 +15,8 @@ import java.util.Scanner;
 public class ScienceChestDAO {
     private static ScienceChestDAO instance;
     private static Connection conn;
-    private PreparedStatement addUserQuery, findUserQuery, getScientificPapersByGenre, getScientificPapersByTitle, getAuthorsForScientificPaper;
+    private PreparedStatement addUserQuery, findUserQuery, getScientificPapersByGenreQuery, getScientificPapersByTitleQuery,
+            getAuthorsForScientificPaperQuery, addScientificPaperQuery, addAuthorQuery, getMaxSidQuery, getMaxAidQuery;
 
 
     private SimpleObjectProperty<User> currentUser = new SimpleObjectProperty<>();
@@ -47,17 +48,26 @@ public class ScienceChestDAO {
         try {
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
-            getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
-            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
-            getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+            getScientificPapersByGenreQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+            getScientificPapersByTitleQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
+            getAuthorsForScientificPaperQuery = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+            addScientificPaperQuery = conn.prepareStatement("INSERT INTO scientific_paper VALUES (?,?,?,?,?,?,?)");
+            addAuthorQuery = conn.prepareStatement("INSERT INTO author VALUES (?,?,?)");
+            getMaxSidQuery = conn.prepareStatement("SELECT max(sid)+1 FROM scientific_paper");
+            getMaxAidQuery = conn.prepareStatement("SELECT max(aid)+1 FROM author");
         } catch (SQLException e) {
             regenerateDatabase();
             try {
                 addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
                 findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username = ?");
-                getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
-                getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");;
-                getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+                getScientificPapersByGenreQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+                getScientificPapersByTitleQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
+                ;
+                getAuthorsForScientificPaperQuery = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+                addScientificPaperQuery = conn.prepareStatement("INSERT INTO scientific_paper VALUES (?,?,?,?,?,?,?)");
+                addAuthorQuery = conn.prepareStatement("INSERT INTO author VALUES (?,?,?)");
+                getMaxSidQuery = conn.prepareStatement("SELECT max(sid)+1 FROM scientific_paper");
+                getMaxAidQuery = conn.prepareStatement("SELECT max(aid)+1 FROM author");
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -123,7 +133,6 @@ public class ScienceChestDAO {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             addUserQuery = conn.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?)");
-
             try {
                 addUserQuery.setString(1, user.getName());
                 addUserQuery.setString(2, user.getSurname());
@@ -139,11 +148,11 @@ public class ScienceChestDAO {
             e.printStackTrace();
         }
     }
-    public boolean usernameExists(String username){
+
+    public boolean usernameExists(String username) {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
-
+            findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username = ?");
             try {
                 findUserQuery.setString(1, username);
                 ResultSet rs = findUserQuery.executeQuery();
@@ -158,7 +167,7 @@ public class ScienceChestDAO {
         return false;
     }
 
-    public void logInUser(String username){
+    public void logInUser(String username) {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             findUserQuery = conn.prepareStatement("SELECT * FROM user WHERE username=?");
@@ -166,7 +175,7 @@ public class ScienceChestDAO {
             try {
                 findUserQuery.setString(1, username);
                 ResultSet rs = findUserQuery.executeQuery();
-                if (rs.next()){
+                if (rs.next()) {
                     User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                     currentUser.set(user);
                 }
@@ -180,18 +189,18 @@ public class ScienceChestDAO {
     }
 
     public ScientificPaper getScientificPaperFromResultSet(ResultSet rs) throws SQLException {
-        return new ScientificPaper(rs.getString("title"), rs.getString("link"), rs.getString("summary"), rs.getInt("year"), ScientificPaperGenre.valueOf(rs.getString("genre")), ScientificPaperType.valueOf(rs.getString("type")) );
+        return new ScientificPaper(rs.getString("title"), rs.getString("link"), rs.getString("summary"), rs.getInt("year"), ScientificPaperGenre.valueOf(rs.getString("genre")), ScientificPaperType.valueOf(rs.getString("type")));
     }
 
-    public ArrayList<String> getAuthorsForScientificPaper (Integer id) {
+    public ArrayList<String> getAuthorsForScientificPaper(Integer id) {
         ArrayList<String> authors = new ArrayList<>();
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            getAuthorsForScientificPaper = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
+            getAuthorsForScientificPaperQuery = conn.prepareStatement("SELECT full_name from author WHERE fk_sid=?");
 
             try {
-                getAuthorsForScientificPaper.setString(1, String.valueOf(id));
-                ResultSet rs = getAuthorsForScientificPaper.executeQuery();
+                getAuthorsForScientificPaperQuery.setString(1, String.valueOf(id));
+                ResultSet rs = getAuthorsForScientificPaperQuery.executeQuery();
                 while (rs.next()) {
                     authors.add(rs.getString("full_name"));
                 }
@@ -205,14 +214,14 @@ public class ScienceChestDAO {
         return authors;
     }
 
-    public void getScientificPaperByGenre (ScientificPaperGenre genre){
+    public void getScientificPaperByGenre(ScientificPaperGenre genre) {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
+            getScientificPapersByGenreQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
 
             try {
-                getScientificPapersByGenre.setString(1, genre.name());
-                ResultSet rs = getScientificPapersByGenre.executeQuery();
+                getScientificPapersByGenreQuery.setString(1, genre.name());
+                ResultSet rs = getScientificPapersByGenreQuery.executeQuery();
                 while (rs.next()) {
                     ScientificPaper paper = getScientificPaperFromResultSet(rs);
                     paper.setAuthors(getAuthorsForScientificPaper(rs.getInt("sid")));
@@ -227,15 +236,15 @@ public class ScienceChestDAO {
         }
     }
 
-    public void getScientificPaperByTitle(String title){
+    public void getScientificPaperByTitle(String title) {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            getScientificPapersByTitle = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
+            getScientificPapersByTitleQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
 
             try {
                 String searchTitle = "%" + title + "%";
-                getScientificPapersByTitle.setString(1, searchTitle);
-                ResultSet rs = getScientificPapersByTitle.executeQuery();
+                getScientificPapersByTitleQuery.setString(1, searchTitle);
+                ResultSet rs = getScientificPapersByTitleQuery.executeQuery();
                 while (rs.next()) {
                     ScientificPaper paper = getScientificPaperFromResultSet(rs);
                     paper.setAuthors(getAuthorsForScientificPaper(rs.getInt("sid")));
@@ -245,6 +254,45 @@ public class ScienceChestDAO {
                 e.printStackTrace();
             }
             conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addScientificPaper(ScientificPaper scientificPaper) {
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
+            getMaxSidQuery = conn.prepareStatement("SELECT max(sid)+1 from scientific_paper");
+            getMaxAidQuery = conn.prepareStatement("SELECT max(aid)+1 from author");
+            addScientificPaperQuery = conn.prepareStatement("INSERT INTO scientific_paper VALUES (?,?,?,?,?,?,?)");
+            addAuthorQuery = conn.prepareStatement("INSERT INTO author VALUES (?,?,?)");
+            try {
+                ResultSet rs = getMaxSidQuery.executeQuery();
+                Integer sid = 0, aid = 0;
+                if (rs.next()) {
+                    sid = rs.getInt(1);
+                }
+                rs = getMaxAidQuery.executeQuery();
+                if (rs.next()) {
+                    aid = rs.getInt(1);
+                }
+                addScientificPaperQuery.setInt(1, sid);
+                addScientificPaperQuery.setString(2, scientificPaper.getTitle());
+                addScientificPaperQuery.setInt(3, scientificPaper.getYearOfPublication());
+                addScientificPaperQuery.setString(4, scientificPaper.getGenre().name());
+                addScientificPaperQuery.setString(5, scientificPaper.getType().name());
+                addScientificPaperQuery.setString(6, scientificPaper.getLink());
+                addScientificPaperQuery.setString(7, scientificPaper.getSummary());
+                addScientificPaperQuery.executeUpdate();
+                for (int i = 0; i < scientificPaper.getAuthors().size(); i++) {
+                    addAuthorQuery.setInt(1, aid++);
+                    addAuthorQuery.setString(2, scientificPaper.getAuthors().get(i));
+                    addAuthorQuery.setInt(3, sid);
+                    addAuthorQuery.executeUpdate();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -8,23 +8,21 @@ CREATE TABLE IF NOT EXISTS "user" (
     PRIMARY KEY ("username")
 );
 CREATE TABLE IF NOT EXISTS "scientific_paper" (
-    "sid" INTEGER,
+    "sid" INTEGER PRIMARY KEY,
     "title" TEXT,
     "year" INTEGER,
     "genre" TEXT,
     "type" TEXT,
     "link" TEXT,
-    "summary" TEXT,
-    PRIMARY KEY("sid")
+    "summary" TEXT
 );
 CREATE TABLE IF NOT EXISTS "author" (
-    "aid" INTEGER,
+    "aid" INTEGER PRIMARY KEY,
     "full_name" TEXT,
     "fk_sid" INTEGER,
-    PRIMARY KEY ("aid"),
     FOREIGN KEY ("fk_sid") REFERENCES scientific_paper ("sid")
 );
-INSERT INTO "scientific_paper" VALUES (1,'Action Analysis for Animators',2012, 'ART', 'BOOK', 'https://www.sciencedirect.com/book/9780240812182/action-analysis-for-animators', 'Action Analysis is one of the fundamental princples of animation that underpins all types of animation: 2d, 3d, computer animation, stop motion, etc. This is a fundamental skill that all animators need to create polished, believable animation. An example of Action Analysis would be Shrek''s swagger in the film, Shrek. The animators clearly understood (through action analysis) the type of walk achieved by a large and heavy individual (the real) and then applied their observations to the animated character of an ogre (the fantastic). It is action analysis that enabled the animation team to visually translate a real life situation into an ogre''s walk, achieving such fantastic results. Key animation skills are demonstrated with in-depth illustrations, photographs and live action footage filmed with high speed cameras. Detailed Case Studies and practical assignments ground action analysis methodology with real life examples. Action Analysis for Animators is a essential guide for students, amateurs and professionals.');
+INSERT INTO "scientific_paper" VALUES (1, 'Action Analysis for Animators',2012, 'ART', 'BOOK', 'https://www.sciencedirect.com/book/9780240812182/action-analysis-for-animators', 'Action Analysis is one of the fundamental princples of animation that underpins all types of animation: 2d, 3d, computer animation, stop motion, etc. This is a fundamental skill that all animators need to create polished, believable animation. An example of Action Analysis would be Shrek''s swagger in the film, Shrek. The animators clearly understood (through action analysis) the type of walk achieved by a large and heavy individual (the real) and then applied their observations to the animated character of an ogre (the fantastic). It is action analysis that enabled the animation team to visually translate a real life situation into an ogre''s walk, achieving such fantastic results. Key animation skills are demonstrated with in-depth illustrations, photographs and live action footage filmed with high speed cameras. Detailed Case Studies and practical assignments ground action analysis methodology with real life examples. Action Analysis for Animators is a essential guide for students, amateurs and professionals.');
 INSERT INTO "author" VALUES(1, 'Chris Webster', 1);
 INSERT INTO "scientific_paper" VALUES(2, 'Animated Realism', 2012, 'ART','BOOK', 'https://www.sciencedirect.com/book/9780240814391/animated-realism', 'With the development and accessibility of animation tools and techniques, filmmakers are blurring the boundaries between documentary filmmaking and animation. The intimacy, imperfection and charm of the animated form is providing live-action and animation directors with unique ways to tell stories, humanize events and convey information not easily adapted for live-action media. Animated Realism presents animation techniques as they apply to the documentary genre with an inspirational behind-the-scenes look at award-winning animated documentaries. Animators and documentary filmmakers alike will learn how to develop a visual style with animation, translate a graphic novel into a documentary and use 3D animation as a storytelling tool, all in the context of creating animated documentaries.');
 INSERT INTO "author" VALUES (2, 'Judith Kriger', 2);
