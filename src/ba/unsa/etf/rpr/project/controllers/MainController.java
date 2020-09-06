@@ -71,6 +71,24 @@ public class MainController {
                 System.exit(0);
             }
         });
+        add.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                Parent root = null;
+                try {
+                    Stage myStage=new Stage();
+                    FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/add.fxml"));
+                    AddController lctrl=new AddController();
+                    loaderr.setController(lctrl);
+                    root = loaderr.load();
+                    myStage.setTitle("Add new scientific paper");
+                    myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                    myStage.show();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
