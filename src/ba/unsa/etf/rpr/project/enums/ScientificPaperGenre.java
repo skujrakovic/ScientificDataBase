@@ -1,40 +1,24 @@
 package ba.unsa.etf.rpr.project.enums;
 
 public enum ScientificPaperGenre {
-    ART,
-    BIOLOGY,
-    BUSINESS,
-    CHEMISTRY,
-    ENGINEERING,
-    ECONOMICS,
-    GEOGRAPHY,
-    MEDICINE,
-    PHYSICS,
-    PSYCHOLOGY;
+    ART("Arts and humanities"),
+    BIOLOGY("Life Sciences and Biology"),
+    BUSINESS("Business and management"),
+    CHEMISTRY("Chemistry and Materials Science"),
+    ENGINEERING("Engineering and Computer Science"),
+    ECONOMICS("Economics and Finance"),
+    GEOGRAPHY("Earth Sciences and Geography"),
+    MEDICINE("Medical and Health Sciences"),
+    PHYSICS("Physics and Mathematics"),
+    PSYCHOLOGY("Social Sciences and Psychology");
+    private String label;
 
-    public static String convert(ScientificPaperGenre genre) {
-        switch (genre){
-            case ART:
-                return "Arts and humanities";
-            case BUSINESS:
-                return "Business and management";
-            case CHEMISTRY:
-                return "Chemistry and Materials Science";
-            case GEOGRAPHY:
-                return "Eart Sciences and Geography";
-            case ECONOMICS:
-                return "Economics and Finance";
-            case ENGINEERING:
-                return "Engineering and Computer Science";
-            case BIOLOGY:
-                return "Life Sciences and Biology";
-            case MEDICINE:
-                return "Medical and Health Sciences";
-            case PHYSICS:
-                return "Physics and Mathematics";
-            case PSYCHOLOGY:
-                return "Social Sciences and Psychology";
-        }
-        return null;
+    ScientificPaperGenre(String label) {
+        this.label = label;
     }
+
+    public String ScientificPaperGenre() { return label; }
+
+    @Override public String toString() { return label; }
+
 }

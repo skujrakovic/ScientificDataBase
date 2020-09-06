@@ -43,7 +43,7 @@ public class ResultsController {
                 if (genre == null || empty) {
                     setGraphic(null);
                 } else {
-                    Label label = new Label (ScientificPaperGenre.convert(genre));
+                    Label label = new Label (genre.toString());
                     label.setStyle("-fx-text-fill: white;");
                     setGraphic(label);
                 }

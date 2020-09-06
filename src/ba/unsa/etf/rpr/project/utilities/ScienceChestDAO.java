@@ -211,7 +211,7 @@ public class ScienceChestDAO {
             getScientificPapersByGenre = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
 
             try {
-                getScientificPapersByGenre.setString(1, genre.toString());
+                getScientificPapersByGenre.setString(1, genre.name());
                 ResultSet rs = getScientificPapersByGenre.executeQuery();
                 while (rs.next()) {
                     ScientificPaper paper = getScientificPaperFromResultSet(rs);
