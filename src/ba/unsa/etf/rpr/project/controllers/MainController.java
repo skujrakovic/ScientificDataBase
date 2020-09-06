@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -85,6 +86,23 @@ public class MainController {
     }
 
     public void Search (ActionEvent actionEvent){
+        if(fldSearch.getText().equals("")){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("You need to type something into the search field.");
+            alert.showAndWait();
+            return;
+        }
+        scienceChestDAO.getScientificPaperByTitle(fldSearch.getText());
+        if(scienceChestDAO.getResults()==null || scienceChestDAO.getResults().size()==0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("No results found.");
+            alert.showAndWait();
+            return;
+        }
         Parent root = null;
         try {
             Stage myStage=new Stage();
@@ -95,7 +113,6 @@ public class MainController {
             myStage.setTitle("Results");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
