@@ -6,23 +6,27 @@ import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 
-import java.util.*;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 
 public class ResultsController {
     public TableView<ScientificPaper> tableViewResults;
-    public TableColumn<ScientificPaper,ArrayList<String>> colAuthors;
+    public TableColumn<ScientificPaper, ArrayList<String>> colAuthors;
     public TableColumn<ScientificPaper,String> colTitle;
     public TableColumn<ScientificPaper, ScientificPaperGenre> colGenre;
     public TableColumn<ScientificPaper, ScientificPaperType> colType;
+    public Hyperlink link;
     private ObservableList<ScientificPaper> scientificPapersList;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
@@ -32,6 +36,7 @@ public class ResultsController {
 
     @FXML
     public void initialize(){
+        link.setDisable(true);
         tableViewResults.setItems(scientificPapersList);
         colType.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ScientificPaperType>("type"));
         colTitle.setCellValueFactory(new PropertyValueFactory<ScientificPaper, String>("title"));
@@ -68,5 +73,24 @@ public class ResultsController {
                 }
             }
         });
+        tableViewResults.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                link.setDisable(false);
+            }
+        });
+
+    }
+
+    public void OpenWebsite(ActionEvent actionEvent){
+        if(Desktop.isDesktopSupported())
+        {
+            try {
+                Desktop.getDesktop().browse(new URI(tableViewResults.getSelectionModel().getSelectedItem().getLink()));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (URISyntaxException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 }
