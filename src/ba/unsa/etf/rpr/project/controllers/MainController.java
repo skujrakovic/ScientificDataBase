@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -90,6 +91,17 @@ public class MainController {
                 }
             }
         });
+        about.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                alert.setContentText("Credits for icons: freepik, monkik, Nhor Phai, Smashicons, phatplus.\nAll of the icons were downloaded from www.flaticon.com\nCredits for ScienceChest logo: www.freelogodesign.com");
+                alert.showAndWait();
+            }
+        });
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
@@ -116,29 +128,29 @@ public class MainController {
             alert.setHeaderText(null);
             alert.setContentText("You need to type something into the search field.");
             alert.showAndWait();
-            return;
-        }
-        scienceChestDAO.getScientificPaperByTitle(fldSearch.getText());
-        if(scienceChestDAO.getResults()==null || scienceChestDAO.getResults().size()==0){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("No results found.");
-            alert.showAndWait();
-            return;
-        }
-        Parent root = null;
-        try {
-            Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"));
-            ResultsController lctrl=new ResultsController();
-            loaderr.setController(lctrl);
-            root = loaderr.load();
-            myStage.setTitle("Results");
-            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            myStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }else {
+            scienceChestDAO.getScientificPaperByTitle(fldSearch.getText());
+            if (scienceChestDAO.getResults() == null || scienceChestDAO.getResults().size() == 0) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("No results found.");
+                alert.showAndWait();
+                return;
+            }
+            Parent root = null;
+            try {
+                Stage myStage = new Stage();
+                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"));
+                ResultsController lctrl = new ResultsController();
+                loaderr.setController(lctrl);
+                root = loaderr.load();
+                myStage.setTitle("Results");
+                myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                myStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
