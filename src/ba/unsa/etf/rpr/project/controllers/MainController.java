@@ -3,15 +3,13 @@ package ba.unsa.etf.rpr.project.controllers;
 import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -26,6 +24,7 @@ public class MainController {
     public Button btnSearch;
     public ImageView imgArts, imgBusiness, imgChemistry, imgGeography, imgEconomics, imgEngineering, imgBiology, imgMedicine, imgPhysics, imgPsychology;
     public TextField fldSearch;
+    public MenuItem close, add, about;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
     @FXML
@@ -65,6 +64,12 @@ public class MainController {
         });
         imgPhysics.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("PHYSICS"));
+        });
+        close.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                System.exit(0);
+            }
         });
     }
 
