@@ -22,7 +22,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 
 public class MainController {
-    public Button btnSearch;
+    public Button btnSearch, btnLogOut;
     public ImageView imgArts, imgBusiness, imgChemistry, imgGeography, imgEconomics, imgEngineering, imgBiology, imgMedicine, imgPhysics, imgPsychology;
     public TextField fldSearch;
     public MenuItem close, add, about;
@@ -151,6 +151,24 @@ public class MainController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void LogOut(ActionEvent actionEvent){
+        Parent root = null;
+        try {
+            scienceChestDAO.setCurrentUser(null);
+            Stage myStage=new Stage();
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"));
+            HomepageController lctrl=new HomepageController();
+            loaderr.setController(lctrl);
+            root = loaderr.load();
+            myStage.setTitle("Homepage");
+            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            myStage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
