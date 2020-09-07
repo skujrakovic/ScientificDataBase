@@ -31,6 +31,7 @@ public class MainController {
     @FXML
     public void initialize(){
         if(scienceChestDAO.getCurrentUser()==null) add.setDisable(true);
+        else add.setDisable(false);
         Image imageDecline = new Image(getClass().getResourceAsStream("/images/search2.png"));
         ImageView img = new ImageView(imageDecline);
         img.setFitWidth(20);

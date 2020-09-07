@@ -65,6 +65,7 @@ public class LogInController {
     public void LogIn(ActionEvent actionEvent){
         Parent root = null;
         try {
+            scienceChestDAO.logInUser(fldUsername.getText());
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
             MainController lctrl=new MainController();
@@ -73,7 +74,6 @@ public class LogInController {
             myStage.setTitle("ScienceChest");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            scienceChestDAO.logInUser(fldUsername.getText());
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
