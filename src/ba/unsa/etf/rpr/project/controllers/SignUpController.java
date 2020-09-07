@@ -25,11 +25,12 @@ public class SignUpController {
     public PasswordField fldPassword;
     public ImageView imgLogo;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
+    ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
     @FXML
     public void initialize() {
-        fldUsername.setPromptText("Use 6 or more characters");
-        fldPassword.setPromptText("Use 8 or more characters with a mix of letters & numbers");
+        fldUsername.setPromptText(bundle.getString("usernamePrompt"));
+        fldPassword.setPromptText(bundle.getString("passwordPrompt"));
         fldName.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldName.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty()) {
                         System.out.println("tu");
@@ -69,13 +70,12 @@ public class SignUpController {
         imgLogo.setOnMouseClicked((MouseEvent e) -> {
             Parent root = null;
             try {
-                ResourceBundle bundle = ResourceBundle.getBundle("Translation");
                 Stage myStage = new Stage();
                 FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
                 HomepageController lctrl = new HomepageController();
                 loaderr.setController(lctrl);
                 root = loaderr.load();
-                myStage.setTitle("Homepage");
+                myStage.setTitle(bundle.getString("homepage"));
                 myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 myStage.show();
                 ((Node) (e.getSource())).getScene().getWindow().hide();
@@ -88,13 +88,12 @@ public class SignUpController {
     public void LogIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
             LogInController lctrl = new LogInController();
             loaderr.setController(lctrl);
             root = loaderr.load();
-            myStage.setTitle("Log In");
+            myStage.setTitle(bundle.getString("login"));
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
@@ -114,9 +113,9 @@ public class SignUpController {
         if(scienceChestDAO.usernameExists(fldUsername.getText())) {
             fldUsername.getStyleClass().add("incorrectField");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle(bundle.getString("info"));
             alert.setHeaderText(null);
-            alert.setContentText("The username already exists, please choose another one.");
+            alert.setContentText(bundle.getString("existingUsername"));
             alert.showAndWait();
 
         }
@@ -125,9 +124,9 @@ public class SignUpController {
             User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
             scienceChestDAO.addUser(newUser);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle(bundle.getString("info"));
             alert.setHeaderText(null);
-            alert.setContentText("You have successfully created your account!");
+            alert.setContentText(bundle.getString("success"));
 
             alert.showAndWait();
             linkLogIn.fire();

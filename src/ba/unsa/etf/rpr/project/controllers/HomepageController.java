@@ -19,6 +19,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class HomepageController {
     public Button btnSignUp, btnLogIn, btnContinue, btnEnglish, btnBosnian;
+    private ResourceBundle bundle = ResourceBundle.getBundle("Translation");
     @FXML
     public void initialize() {
         Image imageEnglish = new Image(getClass().getResourceAsStream("/images/britain.png"));
@@ -35,7 +36,6 @@ public class HomepageController {
     public void SignUp(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"), bundle);
             SignUpController sctrl=new SignUpController();
@@ -52,7 +52,6 @@ public class HomepageController {
     public void LogIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
             LogInController lctrl=new LogInController();
@@ -70,7 +69,6 @@ public class HomepageController {
     public void Continue (ActionEvent actionEvent){
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
             MainController lctrl=new MainController();
@@ -86,26 +84,18 @@ public class HomepageController {
     }
 
     public void languageBosnian(ActionEvent actionEvent){
-        Locale novi = new Locale("bs","BA");
-        Stage primaryStage = (Stage) btnBosnian.getScene().getWindow();
-        Locale.setDefault(novi);
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
-        loader.setController(this);
-        Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
-        primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        Locale newLocale = new Locale("bs","BA");
+        reloadHomepage(newLocale);
     }
     public void languageEnglish(ActionEvent actionEvent){
-        Locale novi = new Locale("en","EN");
+        Locale newLocale = new Locale("en","EN");
+        reloadHomepage(newLocale);
+    }
+
+    public void reloadHomepage(Locale newLocale){
         Stage primaryStage = (Stage) btnEnglish.getScene().getWindow();
-        Locale.setDefault(novi);
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        Locale.setDefault(newLocale);
+        bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
         loader.setController(this);
         Parent root = null;
@@ -117,4 +107,5 @@ public class HomepageController {
         }
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
     }
+
 }

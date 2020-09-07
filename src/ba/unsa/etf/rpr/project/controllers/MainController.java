@@ -28,17 +28,18 @@ public class MainController {
     public TextField fldSearch;
     public MenuItem close, add, about;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
+    private ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
     @FXML
     public void initialize(){
-        if(scienceChestDAO.getCurrentUser()==null) add.setDisable(true);
-        else add.setDisable(false);
+        if(scienceChestDAO.getCurrentUser()==null) {add.setDisable(true); btnLogOut.setText(bundle.getString("homepage"));}
+        else {add.setDisable(false); btnLogOut.setText(bundle.getString("logout"));}
         Image imageDecline = new Image(getClass().getResourceAsStream("/images/search2.png"));
         ImageView img = new ImageView(imageDecline);
         img.setFitWidth(20);
         img.setFitHeight(20);
         btnSearch.setGraphic(img);
-        fldSearch.setTooltip(new Tooltip("Search by title"));
+        fldSearch.setTooltip(new Tooltip(bundle.getString("searchTooltip")));
         imgArts.setOnMouseClicked((MouseEvent e) -> {
             openResultsFor(ScientificPaperGenre.valueOf("ART"));
         });
@@ -80,13 +81,12 @@ public class MainController {
             public void handle(ActionEvent e) {
                 Parent root = null;
                 try {
-                    ResourceBundle bundle = ResourceBundle.getBundle("Translation");
                     Stage myStage=new Stage();
                     FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/add.fxml"), bundle);
                     AddController lctrl=new AddController();
                     loaderr.setController(lctrl);
                     root = loaderr.load();
-                    myStage.setTitle("Add new scientific paper");
+                    myStage.setTitle(bundle.getString("add"));
                     myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                     myStage.show();
                 } catch (IOException ex) {
@@ -98,10 +98,10 @@ public class MainController {
             @Override
             public void handle(ActionEvent e) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
+                alert.setTitle(bundle.getString("info"));
                 alert.setHeaderText(null);
                 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                alert.setContentText("Credits for icons: freepik, monkik, Nhor Phai, Smashicons, phatplus.\nAll of the icons were downloaded from www.flaticon.com\nCredits for ScienceChest logo: www.freelogodesign.com");
+                alert.setContentText(bundle.getString("credits1")+"\n"+bundle.getString("credits2")+"\n"+bundle.getString("credits3"));
                 alert.showAndWait();
             }
         });
@@ -115,17 +115,17 @@ public class MainController {
     public void Search (ActionEvent actionEvent){
         if(fldSearch.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle(bundle.getString("info"));
             alert.setHeaderText(null);
-            alert.setContentText("You need to type something into the search field.");
+            alert.setContentText(bundle.getString("typeSomething"));
             alert.showAndWait();
         }else {
             scienceChestDAO.getScientificPaperByTitle(fldSearch.getText());
             if (scienceChestDAO.getResults() == null || scienceChestDAO.getResults().size() == 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
+                alert.setTitle(bundle.getString("info"));
                 alert.setHeaderText(null);
-                alert.setContentText("No results found.");
+                alert.setContentText(bundle.getString("noResults"));
                 alert.showAndWait();
                 return;
             }
@@ -136,13 +136,12 @@ public class MainController {
     public void openResults(){
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"), bundle);
             ResultsController lctrl = new ResultsController();
             loaderr.setController(lctrl);
             root = loaderr.load();
-            myStage.setTitle("Results");
+            myStage.setTitle(bundle.getString("results"));
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
         } catch (IOException e) {
@@ -153,14 +152,13 @@ public class MainController {
     public void LogOut(ActionEvent actionEvent){
         Parent root = null;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             scienceChestDAO.setCurrentUser(null);
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
             HomepageController lctrl=new HomepageController();
             loaderr.setController(lctrl);
             root = loaderr.load();
-            myStage.setTitle("Homepage");
+            myStage.setTitle(bundle.getString("homepage"));
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();

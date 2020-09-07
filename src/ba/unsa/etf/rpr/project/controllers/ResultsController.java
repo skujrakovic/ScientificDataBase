@@ -105,7 +105,7 @@ public class ResultsController{
                 }
             }
         } catch (MalformedURLException e) {
-            System.out.println("String "+adresa+" ne predstavlja validan URL");
+            System.out.println("String "+adresa+" does not represent a valid URL");
         }
 
     }
