@@ -17,6 +17,7 @@ import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -79,8 +80,9 @@ public class MainController {
             public void handle(ActionEvent e) {
                 Parent root = null;
                 try {
+                    ResourceBundle bundle = ResourceBundle.getBundle("Translation");
                     Stage myStage=new Stage();
-                    FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/add.fxml"));
+                    FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/add.fxml"), bundle);
                     AddController lctrl=new AddController();
                     loaderr.setController(lctrl);
                     root = loaderr.load();
@@ -106,20 +108,8 @@ public class MainController {
     }
 
     public void openResultsFor (ScientificPaperGenre genre){
-        Parent root = null;
-        try {
             scienceChestDAO.getScientificPaperByGenre(genre);
-            Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"));
-            ResultsController lctrl=new ResultsController();
-            loaderr.setController(lctrl);
-            root = loaderr.load();
-            myStage.setTitle("Results");
-            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            myStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            openResults();
     }
 
     public void Search (ActionEvent actionEvent){
@@ -139,28 +129,34 @@ public class MainController {
                 alert.showAndWait();
                 return;
             }
-            Parent root = null;
-            try {
-                Stage myStage = new Stage();
-                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"));
-                ResultsController lctrl = new ResultsController();
-                loaderr.setController(lctrl);
-                root = loaderr.load();
-                myStage.setTitle("Results");
-                myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-                myStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+           openResults();
+        }
+    }
+
+    public void openResults(){
+        Parent root = null;
+        try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+            Stage myStage = new Stage();
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/results.fxml"), bundle);
+            ResultsController lctrl = new ResultsController();
+            loaderr.setController(lctrl);
+            root = loaderr.load();
+            myStage.setTitle("Results");
+            myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            myStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     public void LogOut(ActionEvent actionEvent){
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             scienceChestDAO.setCurrentUser(null);
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
             HomepageController lctrl=new HomepageController();
             loaderr.setController(lctrl);
             root = loaderr.load();

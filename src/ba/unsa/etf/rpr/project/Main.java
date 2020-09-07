@@ -7,14 +7,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
+
 import static javafx.application.Application.launch;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         HomepageController ctrl = new HomepageController();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
         loader.setController(ctrl);
         Parent root = loader.load();
         primaryStage.setTitle("ScienceChest");

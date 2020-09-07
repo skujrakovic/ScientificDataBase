@@ -15,13 +15,16 @@ import javafx.scene.layout.VBox;
 
 import java.awt.*;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
-public class ResultsController {
+public class ResultsController{
     public TableView<ScientificPaper> tableViewResults;
     public TableColumn<ScientificPaper, ArrayList<String>> colAuthors;
     public TableColumn<ScientificPaper,String> colTitle;
@@ -87,16 +90,24 @@ public class ResultsController {
     }
 
     public void OpenWebsite(ActionEvent actionEvent){
-        if(Desktop.isDesktopSupported())
-        {
-            try {
-                Desktop.getDesktop().browse(new URI(tableViewResults.getSelectionModel().getSelectedItem().getLink()));
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (URISyntaxException e1) {
-                e1.printStackTrace();
+        Scanner scanner = new Scanner(System.in);
+        String adresa = scanner.nextLine();
+        try {
+            URL url = new URL(tableViewResults.getSelectionModel().getSelectedItem().getLink());
+            if(Desktop.isDesktopSupported())
+            {
+                try {
+                    Desktop.getDesktop().browse(new URI(tableViewResults.getSelectionModel().getSelectedItem().getLink()));
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } catch (URISyntaxException e1) {
+                    e1.printStackTrace();
+                }
             }
+        } catch (MalformedURLException e) {
+            System.out.println("String "+adresa+" ne predstavlja validan URL");
         }
+
     }
 
     public void Filter (ActionEvent actionEvent){

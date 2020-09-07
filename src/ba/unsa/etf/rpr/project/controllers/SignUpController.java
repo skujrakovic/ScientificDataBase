@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -68,8 +69,9 @@ public class SignUpController {
         imgLogo.setOnMouseClicked((MouseEvent e) -> {
             Parent root = null;
             try {
+                ResourceBundle bundle = ResourceBundle.getBundle("Translation");
                 Stage myStage = new Stage();
-                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"));
+                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
                 HomepageController lctrl = new HomepageController();
                 loaderr.setController(lctrl);
                 root = loaderr.load();
@@ -86,8 +88,9 @@ public class SignUpController {
     public void LogIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage = new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
             LogInController lctrl = new LogInController();
             loaderr.setController(lctrl);
             root = loaderr.load();

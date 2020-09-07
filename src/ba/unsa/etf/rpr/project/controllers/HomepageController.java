@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -33,8 +34,9 @@ public class HomepageController {
     public void SignUp(ActionEvent actionEvent) {
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"), bundle);
             SignUpController sctrl=new SignUpController();
             loaderr.setController(sctrl);
             root = loaderr.load();
@@ -49,8 +51,9 @@ public class HomepageController {
     public void LogIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
             LogInController lctrl=new LogInController();
             loaderr.setController(lctrl);
             root = loaderr.load();
@@ -66,8 +69,9 @@ public class HomepageController {
     public void Continue (ActionEvent actionEvent){
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
             MainController lctrl=new MainController();
             loaderr.setController(lctrl);
             root = loaderr.load();

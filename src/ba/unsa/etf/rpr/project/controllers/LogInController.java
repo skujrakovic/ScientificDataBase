@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -32,8 +33,9 @@ public class LogInController {
         imgLogo.setOnMouseClicked((MouseEvent e) -> {
             Parent root = null;
             try {
+                ResourceBundle bundle = ResourceBundle.getBundle("Translation");
                 Stage myStage = new Stage();
-                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"));
+                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
                 HomepageController lctrl = new HomepageController();
                 loaderr.setController(lctrl);
                 root = loaderr.load();
@@ -49,8 +51,9 @@ public class LogInController {
     public void SignUp(ActionEvent actionEvent) {
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"), bundle);
             SignUpController sctrl=new SignUpController();
             loaderr.setController(sctrl);
             root = loaderr.load();
@@ -65,9 +68,10 @@ public class LogInController {
     public void LogIn(ActionEvent actionEvent){
         Parent root = null;
         try {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             scienceChestDAO.logInUser(fldUsername.getText());
             Stage myStage=new Stage();
-            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
+            FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
             MainController lctrl=new MainController();
             loaderr.setController(lctrl);
             root = loaderr.load();
