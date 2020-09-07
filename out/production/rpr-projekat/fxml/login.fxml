@@ -36,17 +36,17 @@
         </ImageView>
         <GridPane alignment="CENTER" maxWidth="350.0" minWidth="350.0" prefHeight="300.0" prefWidth="350.0" styleClass="form-background" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER">
             <children>
-        <Label text="Username: " GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+        <Label text="%username" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
             <font>
                 <Font size="14.0" />
             </font></Label>
-        <Label text="Password: " GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+        <Label text="%password" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
             <font>
                 <Font size="14.0" />
             </font></Label>
         <TextField fx:id="fldUsername" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
         <PasswordField fx:id="fldPassword" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" />
-        <Button fx:id="btnLogIn" onAction="#LogIn" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="Log in" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+        <Button fx:id="btnLogIn" onAction="#LogIn" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="%login" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
             <GridPane.margin>
                 <Insets top="10.0" />
             </GridPane.margin>
@@ -69,8 +69,8 @@
         </GridPane>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
             <children>
-                <Label text="Don't have an account?" />
-                <Hyperlink fx:id="linkSignUp" onAction="#SignUp" text="Sign up" />
+                <Label text="%loginQuestion" />
+                <Hyperlink fx:id="linkSignUp" onAction="#SignUp" text="%signup" />
             </children>
         </HBox>
     </children>

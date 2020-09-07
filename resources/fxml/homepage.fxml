@@ -55,7 +55,7 @@
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="60.0">
                <children>
                   <Label text="EN " />
-                  <Button fx:id="btnEnglish" mnemonicParsing="false" />
+                  <Button fx:id="btnEnglish" mnemonicParsing="false" onAction="#languageEnglish" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -64,7 +64,7 @@
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="60.0">
                <children>
                   <Label text="BOS " />
-                  <Button fx:id="btnBosnian" mnemonicParsing="false" />
+                  <Button fx:id="btnBosnian" mnemonicParsing="false" onAction="#languageBosnian" />
                </children>
                <cursor>
                   <Cursor fx:constant="HAND" />

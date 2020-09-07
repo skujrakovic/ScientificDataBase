@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -82,5 +83,38 @@ public class HomepageController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void languageBosnian(ActionEvent actionEvent){
+        Locale novi = new Locale("bs","BA");
+        Stage primaryStage = (Stage) btnBosnian.getScene().getWindow();
+        Locale.setDefault(novi);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
+        loader.setController(this);
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+    }
+    public void languageEnglish(ActionEvent actionEvent){
+        Locale novi = new Locale("en","EN");
+        Stage primaryStage = (Stage) btnEnglish.getScene().getWindow();
+        Locale.setDefault(novi);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
+        loader.setController(this);
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
     }
 }
