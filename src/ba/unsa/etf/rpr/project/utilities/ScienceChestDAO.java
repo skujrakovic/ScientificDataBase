@@ -216,10 +216,10 @@ public class ScienceChestDAO implements IScienceChest {
     }
 
     public void getScientificPaperByGenre(ScientificPaperGenre genre) {
+        results.clear();
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             getScientificPapersByGenreQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE genre=?");
-
             try {
                 getScientificPapersByGenreQuery.setString(1, genre.name());
                 ResultSet rs = getScientificPapersByGenreQuery.executeQuery();
@@ -238,6 +238,7 @@ public class ScienceChestDAO implements IScienceChest {
     }
 
     public void getScientificPaperByTitle(String title) {
+        results.clear();
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
             getScientificPapersByTitleQuery = conn.prepareStatement("SELECT * FROM scientific_paper WHERE title LIKE ?");
