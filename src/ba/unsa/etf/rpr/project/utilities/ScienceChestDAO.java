@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.project.utilities;
 
 import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
 import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
+import ba.unsa.etf.rpr.project.interfaces.IScienceChest;
 import ba.unsa.etf.rpr.project.javabeans.ScientificPaper;
 import ba.unsa.etf.rpr.project.javabeans.User;
 import javafx.beans.property.SimpleObjectProperty;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ScienceChestDAO {
+public class ScienceChestDAO implements IScienceChest {
     private static ScienceChestDAO instance;
     private static Connection conn;
     private PreparedStatement addUserQuery, findUserQuery, getScientificPapersByGenreQuery, getScientificPapersByTitleQuery,
