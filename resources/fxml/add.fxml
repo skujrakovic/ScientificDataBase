@@ -2,7 +2,6 @@
 
 <?import java.net.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -60,10 +59,10 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
+            <Spinner fx:id="spinnerYear" min="0"  max="2020" initialValue="2020" amountToStepBy="1" editable="true" prefHeight="26.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                 <TextField fx:id="fldTitle" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" />
-                <TextField fx:id="fldYear" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField fx:id="fldAuthors"  maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="fldAuthors" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <ChoiceBox fx:id="choiceGenre" prefHeight="26.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <ChoiceBox fx:id="choiceType" layoutX="87.0" layoutY="166.0" prefHeight="26.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="%summary" GridPane.rowIndex="7">
@@ -95,7 +94,7 @@
                 <RowConstraints vgrow="ALWAYS" />
             </rowConstraints>
         </GridPane>
-          <Button fx:id="btnAdd" onAction="#Add" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" prefWidth="150.0" text="%addButton" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+          <Button fx:id="btnAdd" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#Add" prefWidth="150.0" text="%addButton" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
               <GridPane.margin>
                   <Insets top="10.0" />
               </GridPane.margin>

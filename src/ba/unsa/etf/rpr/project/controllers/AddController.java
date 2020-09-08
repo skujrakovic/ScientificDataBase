@@ -7,17 +7,15 @@ import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class AddController {
-    public TextField fldTitle, fldAuthors, fldYear, fldLink;
+    public TextField fldTitle, fldAuthors, fldLink;
+    public Spinner<Integer> spinnerYear;
     public TextArea areaSummary;
     public ChoiceBox<ScientificPaperGenre> choiceGenre;
     public ChoiceBox<ScientificPaperType> choiceType;
@@ -32,7 +30,7 @@ public class AddController {
     }
 
     public void Add(ActionEvent actionEvent){
-        ScientificPaper paper = new ScientificPaper(fldTitle.getText(), fldLink.getText(), areaSummary.getText(), Integer.valueOf(fldYear.getText()), choiceGenre.getValue(), choiceType.getValue());
+        ScientificPaper paper = new ScientificPaper(fldTitle.getText(), fldLink.getText(), areaSummary.getText(), spinnerYear.getValue(), choiceGenre.getValue(), choiceType.getValue());
         paper.setAuthors(new ArrayList<String>(Arrays.asList(fldAuthors.getText().toString().split(","))));
         scienceChestDAO.addScientificPaper(paper);
     }

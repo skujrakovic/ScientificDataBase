@@ -1,9 +1,11 @@
 package ba.unsa.etf.rpr.project.enums;
 
+import java.util.ResourceBundle;
+
 public enum ScientificPaperGenre {
-    ART("Arts and humanities"),
+    ART("Arts and Humanities"),
     BIOLOGY("Life Sciences and Biology"),
-    BUSINESS("Business and management"),
+    BUSINESS("Business and Management"),
     CHEMISTRY("Chemistry and Materials Science"),
     ENGINEERING("Engineering and Computer Science"),
     ECONOMICS("Economics and Finance"),
@@ -19,6 +21,8 @@ public enum ScientificPaperGenre {
 
     public String ScientificPaperGenre() { return label; }
 
-    @Override public String toString() { return label; }
+    @Override public String toString() {
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        return bundle.getString((label.split(" "))[0]); }
 
 }

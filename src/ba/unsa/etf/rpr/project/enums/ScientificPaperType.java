@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.project.enums;
 
+import java.util.ResourceBundle;
+
 public enum ScientificPaperType {
     BOOK("Book"),
     JOURNAL("Journal");
@@ -12,5 +14,8 @@ public enum ScientificPaperType {
 
     public String ScientificPaperType() { return label; }
 
-    @Override public String toString() { return label; }
+    @Override public String toString() {
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        return bundle.getString(label);
+    }
 }
