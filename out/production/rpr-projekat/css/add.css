@@ -10,6 +10,12 @@
     -fx-hgap: 1;
     -fx-padding: 1;
 }
+.incorrectField {
+    -fx-control-inner-background: lightcoral;
+}
+.correctField {
+    -fx-control-inner-background: transparent;
+}
 
 #btnAdd {
     -fx-background-color:

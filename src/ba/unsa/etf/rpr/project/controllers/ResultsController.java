@@ -110,7 +110,7 @@ public class ResultsController{
 
     public void Filter (ActionEvent actionEvent){
         if(!choiceGenre.getSelectionModel().isEmpty()) {
-            scientificPapersList=scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getGenre().equals(choiceGenre.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
+            scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getGenre().equals(choiceGenre.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
         }
         if(!choiceType.getSelectionModel().isEmpty()) {
             scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getType().equals(choiceType.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));;
