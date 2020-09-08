@@ -90,8 +90,6 @@ public class ResultsController{
     }
 
     public void OpenWebsite(ActionEvent actionEvent){
-        Scanner scanner = new Scanner(System.in);
-        String adresa = scanner.nextLine();
         try {
             URL url = new URL(tableViewResults.getSelectionModel().getSelectedItem().getLink());
             if(Desktop.isDesktopSupported())
@@ -105,7 +103,7 @@ public class ResultsController{
                 }
             }
         } catch (MalformedURLException e) {
-            System.out.println("String "+adresa+" does not represent a valid URL");
+            System.out.println("String "+tableViewResults.getSelectionModel().getSelectedItem().getLink()+" does not represent a valid URL");
         }
 
     }

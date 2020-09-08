@@ -2,7 +2,10 @@ package ba.unsa.etf.rpr.project.javabeans;
 
 import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
 import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
+import ba.unsa.etf.rpr.project.exceptions.InvalidUrlException;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ScientificPaper {
@@ -12,7 +15,12 @@ public class ScientificPaper {
     ScientificPaperType type;
     ArrayList<String> authors;
 
-    public ScientificPaper(String title, String link, String summary, Integer yearOfPublication, ScientificPaperGenre genre, ScientificPaperType type) {
+    public ScientificPaper(String title, String link, String summary, Integer yearOfPublication, ScientificPaperGenre genre, ScientificPaperType type) throws InvalidUrlException {
+        try {
+            URL url = new URL(link);
+        } catch (MalformedURLException e) {
+            throw new InvalidUrlException("Url recieved as parameter is not valid!");
+        }
         this.title = title;
         this.link = link;
         this.summary = summary;
