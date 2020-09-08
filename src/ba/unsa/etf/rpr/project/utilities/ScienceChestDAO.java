@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.project.utilities;
 
 import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
 import ba.unsa.etf.rpr.project.enums.ScientificPaperType;
+import ba.unsa.etf.rpr.project.exceptions.InvalidUrlException;
 import ba.unsa.etf.rpr.project.interfaces.IScienceChest;
 import ba.unsa.etf.rpr.project.javabeans.ScientificPaper;
 import ba.unsa.etf.rpr.project.javabeans.User;
@@ -190,7 +191,14 @@ public class ScienceChestDAO implements IScienceChest {
     }
 
     public ScientificPaper getScientificPaperFromResultSet(ResultSet rs) throws SQLException {
-        return new ScientificPaper(rs.getString("title"), rs.getString("link"), rs.getString("summary"), rs.getInt("year"), ScientificPaperGenre.valueOf(rs.getString("genre")), ScientificPaperType.valueOf(rs.getString("type")));
+        ScientificPaper paper;
+        try {
+            paper = new ScientificPaper(rs.getString("title"), rs.getString("link"), rs.getString("summary"), rs.getInt("year"), ScientificPaperGenre.valueOf(rs.getString("genre")), ScientificPaperType.valueOf(rs.getString("type")));
+        } catch (InvalidUrlException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return paper;
     }
 
     public ArrayList<String> getAuthorsForScientificPaper(Integer id) {
