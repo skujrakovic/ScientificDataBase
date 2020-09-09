@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
@@ -33,6 +34,7 @@ public class ResultsController{
     public Hyperlink link;
     public ChoiceBox<ScientificPaperGenre> choiceGenre;
     public ChoiceBox<ScientificPaperType> choiceType;
+    public Button btnDownload;
     private ObservableList<ScientificPaper> scientificPapersList;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
@@ -43,6 +45,7 @@ public class ResultsController{
     @FXML
     public void initialize(){
         link.setDisable(true);
+        btnDownload.setDisable(true);
         tableViewResults.setItems(scientificPapersList);
         colType.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ScientificPaperType>("type"));
         colTitle.setCellValueFactory(new PropertyValueFactory<ScientificPaper, String>("title"));
@@ -82,6 +85,10 @@ public class ResultsController{
         tableViewResults.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 link.setDisable(false);
+                btnDownload.setDisable(false);
+            }else{
+                link.setDisable(true);
+                btnDownload.setDisable(true);
             }
         });
         choiceGenre.setItems(FXCollections.observableArrayList(ScientificPaperGenre.values()));
@@ -116,5 +123,12 @@ public class ResultsController{
             scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getType().equals(choiceType.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));;
         }
         tableViewResults.setItems(scientificPapersList);
+    }
+
+    public void SaveFile(ActionEvent actionEvent){
+        Thread thread = new Thread(() -> {
+            scienceChestDAO.writeToFile(tableViewResults.getSelectionModel().getSelectedItem());
+        });
+        thread.start();
     }
 }

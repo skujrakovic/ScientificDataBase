@@ -312,4 +312,44 @@ public class ScienceChestDAO implements IScienceChest {
             e.printStackTrace();
         }
     }
+
+    private String wrapString(String s, String deliminator, int length) {
+        String result = "";
+        int lastdelimPos = 0;
+        for (String token : s.split(" ", -1)) {
+            if (result.length() - lastdelimPos + token.length() > length) {
+                result = result + deliminator + token;
+                lastdelimPos = result.length() + 1;
+            } else {
+                result += (result.isEmpty() ? "" : " ") + token;
+            }
+        }
+        return result;
+    }
+
+    public void writeToFile(ScientificPaper paper) {
+        File file = new File(System.getProperty("user.home"), paper.getTitle() + ", " + paper.getType().toString() + ".txt");
+        String text = new String("Title: " + paper.getTitle() + "\n\nSummary:\n");
+        text += wrapString(paper.getSummary(), "\n", 70);
+        text += "\n\nAuthors:\n";
+        for (String author :
+                paper.getAuthors()) {
+            text += author;
+            text += "\n";
+        }
+        Writer writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(file));
+            writer.write(text);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) try {
+                writer.close();
+            } catch (IOException ignore) {
+            }
+        }
+
+    }
 }

@@ -63,7 +63,7 @@
             <Hyperlink fx:id="link" onAction="#OpenWebsite" text="%here" />
          </children>
       </VBox>
-      <Button fx:id="btnDownload" mnemonicParsing="false" text="%openDetails" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <Button fx:id="btnDownload" mnemonicParsing="false" text="%saveDetails" onAction="#SaveFile" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
       <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#Filter" text="%confirm" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Separator prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="2" />
       <Label text="%filterType" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />

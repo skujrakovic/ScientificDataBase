@@ -14,4 +14,5 @@ public interface IScienceChest {
     void getScientificPaperByGenre(ScientificPaperGenre genre);
     void getScientificPaperByTitle(String title);
     void addScientificPaper(ScientificPaper scientificPaper);
+    void writeToFile(ScientificPaper scientificPaper);
 }
