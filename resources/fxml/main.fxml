@@ -28,6 +28,7 @@
                 <Menu mnemonicParsing="false" text="%file">
                   <items>
                     <MenuItem fx:id="close" mnemonicParsing="false" text="%close" />
+                      <MenuItem fx:id="print" mnemonicParsing="false" text="%print" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="%edit">

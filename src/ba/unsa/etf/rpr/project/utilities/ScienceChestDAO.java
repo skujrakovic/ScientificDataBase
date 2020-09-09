@@ -35,6 +35,11 @@ public class ScienceChestDAO implements IScienceChest {
     }
 
     public static Connection getConn() {
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:database.db");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return conn;
     }
 

@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/net_sf_jasperreports_jasperreports_6_12_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/javabeans/ScientificPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/javabeans/ScientificPaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/css/add.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/css/add.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/add.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/add.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/AddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/AddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Translation.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Translation_bs.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation_bs.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Translation_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpr-projekat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpr-projekat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +228,8 @@
       <workItem from="1599463591344" duration="2681000" />
       <workItem from="1599497295552" duration="12663000" />
       <workItem from="1599593966084" duration="3961000" />
-      <workItem from="1599598541527" duration="4859000" />
+      <workItem from="1599598541527" duration="5642000" />
+      <workItem from="1599671903243" duration="2964000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1597164529250</created>
@@ -559,14 +560,20 @@
       <option name="project" value="LOCAL" />
       <updated>1599599131286</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Added validation when adding a new scientific paper">
+      <created>1599603722381</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1599603722381</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added results when &quot;Medical and Health Sciences&quot; is selected" />
     <MESSAGE value="Added results when &quot;Social Sciences and Psychology&quot; is selected" />
     <MESSAGE value="Added results when &quot;Physics and Mathematics&quot; is selected" />
     <MESSAGE value="Results table now shows full names for genres" />
@@ -591,7 +598,8 @@
     <MESSAGE value="Added a test for checking the language change" />
     <MESSAGE value="Added an exception which is thrown when creating a ScientificPaper with invalid link" />
     <MESSAGE value="Added a Warning Dialog when adding a scientific paper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a Warning Dialog when adding a scientific paper" />
+    <MESSAGE value="Added validation when adding a new scientific paper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added validation when adding a new scientific paper" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
@@ -614,30 +622,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599253614532" />
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599599130060">
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599603721041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599599130060" />
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599603721041" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1599511466975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599511466975" />
-    <state width="1493" height="380" key="GridCell.Tab.0.bottom" timestamp="1599603663500">
+    <state width="1493" height="380" key="GridCell.Tab.0.bottom" timestamp="1599675110014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599603663500" />
-    <state width="1493" height="380" key="GridCell.Tab.0.center" timestamp="1599603663500">
+    <state width="1493" height="380" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599675110014" />
+    <state width="1493" height="380" key="GridCell.Tab.0.center" timestamp="1599675110014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599603663500" />
-    <state width="1493" height="380" key="GridCell.Tab.0.left" timestamp="1599603663500">
+    <state width="1493" height="380" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599675110014" />
+    <state width="1493" height="380" key="GridCell.Tab.0.left" timestamp="1599675110014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599603663500" />
-    <state width="1493" height="380" key="GridCell.Tab.0.right" timestamp="1599603663500">
+    <state width="1493" height="380" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599675110014" />
+    <state width="1493" height="380" key="GridCell.Tab.0.right" timestamp="1599675110014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599603663500" />
+    <state width="1493" height="380" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599675110014" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1599344438896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -658,22 +666,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1598650240875" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1599595237137">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1599672887590">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599595237137" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599599133830">
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599672887590" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599604312325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599599133830" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599604312325" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599497296853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1599497296853" />
-    <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1599595232131">
+    <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1599672871596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1599595232131" />
+    <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1599672871596" />
     <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599595680931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

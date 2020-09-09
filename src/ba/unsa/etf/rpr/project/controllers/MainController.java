@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.project.controllers;
 
 import ba.unsa.etf.rpr.project.enums.ScientificPaperGenre;
+import ba.unsa.etf.rpr.project.reports.PrintReport;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -26,7 +28,7 @@ public class MainController {
     public Button btnSearch, btnLogOut;
     public ImageView imgArts, imgBusiness, imgChemistry, imgGeography, imgEconomics, imgEngineering, imgBiology, imgMedicine, imgPhysics, imgPsychology;
     public TextField fldSearch;
-    public MenuItem close, add, about;
+    public MenuItem close, add, about, print;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
     private ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
@@ -103,6 +105,17 @@ public class MainController {
                 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                 alert.setContentText(bundle.getString("credits1")+"\n"+bundle.getString("credits2")+"\n"+bundle.getString("credits3"));
                 alert.showAndWait();
+            }
+        });
+        print.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                PrintReport report = new PrintReport();
+                try {
+                    report.showReport(ScienceChestDAO.getConn());
+                } catch (JRException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
