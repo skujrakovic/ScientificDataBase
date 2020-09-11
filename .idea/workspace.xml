@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="Added a report which contains a table with all scientific papers from database">
+    <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/SignUpControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/Translation.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/Translation.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/Translation_bs.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/Translation_bs.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/Translation_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/Translation_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/AddController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/interfaces/IScienceChest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/interfaces/IScienceChest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/SignUpController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/results.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Translation.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Translation_bs.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation_bs.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Translation_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Translation_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fxml/results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/results.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/ResultsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/interfaces/IScienceChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/interfaces/IScienceChest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/rpr-projekat/ba/unsa/etf/rpr/project/controllers/HomepageControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/rpr-projekat/ba/unsa/etf/rpr/project/controllers/HomepageControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/controllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/HomepageControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/HomepageControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +59,8 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -113,24 +97,24 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ba.unsa.etf.rpr.project.controllers" />
       <recent name="ba.unsa.etf.rpr.project" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hamid\IdeaProjects\rpr-projekat\resources\images" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ba.unsa.etf.rpr.project.controllers" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ba.unsa.etf.rpr.project.controllers" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hamid\IdeaProjects\rpr-projekat\resources\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in rpr-projekat">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.Main" />
       <module name="rpr-projekat" />
@@ -141,6 +125,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in rpr-projekat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-projekat" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,8 +167,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignUpControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-projekat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.controllers.SignUpControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in rpr-projekat" />
+        <item itemvalue="JUnit.SignUpControllerTest" />
         <item itemvalue="JUnit.HomepageControllerTest" />
         <item itemvalue="JUnit.MainTest" />
       </list>
@@ -244,14 +253,9 @@
       <workItem from="1599497295552" duration="12663000" />
       <workItem from="1599593966084" duration="3961000" />
       <workItem from="1599598541527" duration="5642000" />
-      <workItem from="1599671903243" duration="6985000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <created>1597164529250</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1597164529251</updated>
+      <workItem from="1599671903243" duration="7668000" />
+      <workItem from="1599849281710" duration="4275000" />
+      <workItem from="1599854265748" duration="3097000" />
     </task>
     <task id="LOCAL-00002" summary="Added User class (with attributes, getters &amp; setters)">
       <created>1598526878664</created>
@@ -589,14 +593,20 @@
       <option name="project" value="LOCAL" />
       <updated>1599675250919</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Added an option to download the summary in the form of a .txt document">
+      <created>1599687119330</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1599687119331</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added results when &quot;Physics and Mathematics&quot; is selected" />
     <MESSAGE value="Results table now shows full names for genres" />
     <MESSAGE value="Implemented search by title" />
     <MESSAGE value="Implemented the &quot;Close&quot; Menu Item" />
@@ -621,7 +631,8 @@
     <MESSAGE value="Added a Warning Dialog when adding a scientific paper" />
     <MESSAGE value="Added validation when adding a new scientific paper" />
     <MESSAGE value="Added a report which contains a table with all scientific papers from database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a report which contains a table with all scientific papers from database" />
+    <MESSAGE value="Added an option to download the summary in the form of a .txt document" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an option to download the summary in the form of a .txt document" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
@@ -644,30 +655,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599684724959" />
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599675250316">
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599687118565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599675250316" />
-    <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1599511466975">
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599687118565" />
+    <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1599851451919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599511466975" />
-    <state width="1493" height="380" key="GridCell.Tab.0.bottom" timestamp="1599686977735">
+    <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599851451919" />
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1599857707543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599686977735" />
-    <state width="1493" height="380" key="GridCell.Tab.0.center" timestamp="1599686977735">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599857707543" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1599857707543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599686977735" />
-    <state width="1493" height="380" key="GridCell.Tab.0.left" timestamp="1599686977734">
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599857707543" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1599857707543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599686977734" />
-    <state width="1493" height="380" key="GridCell.Tab.0.right" timestamp="1599686977735">
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599857707543" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1599857707543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="380" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599686977735" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599857707543" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1599344438896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -688,25 +699,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1598650240875" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1599672887590">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1599851272654">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599672887590" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599675253527">
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599851272654" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599687122135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599675253527" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599497296853">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599687122135" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599849360360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1599497296853" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1599849360360" />
     <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1599672871596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1599672871596" />
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599595680931">
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599849446516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599595680931" />
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599849446516" />
   </component>
 </project>

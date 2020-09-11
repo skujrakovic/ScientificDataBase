@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.project.controllers;
 
+import ba.unsa.etf.rpr.project.Main;
 import ba.unsa.etf.rpr.project.javabeans.User;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
 import javafx.event.ActionEvent;
@@ -33,35 +34,30 @@ public class SignUpController {
         fldPassword.setPromptText(bundle.getString("passwordPrompt"));
         fldName.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldName.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty()) {
-                        System.out.println("tu");
                         fldName.getStyleClass().removeAll("incorrectField");
                     }
                 }
         );
         fldSurname.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldSurname.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty()) {
-                        System.out.println("tu");
                         fldSurname.getStyleClass().removeAll("incorrectField");
                     }
                 }
         );
         fldEmail.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldEmail.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
-                        System.out.println("tu");
                         fldEmail.getStyleClass().removeAll("incorrectField");
                     }
                 }
         );
         fldUsername.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldUsername.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.length()>=6) {
-                        System.out.println("tu");
                         fldUsername.getStyleClass().removeAll("incorrectField");
                     }
                 }
         );
         fldPassword.textProperty().addListener((obs, oldName, newName) -> {
                     if (fldPassword.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.length()>=8 && newName.matches("^[a-zA-Z0-9]+$")) {
-                        System.out.println("tu");
                         fldPassword.getStyleClass().removeAll("incorrectField");
                     }
                 }
@@ -123,13 +119,20 @@ public class SignUpController {
         if(!check.contains("incorrectField")) {
             User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
             scienceChestDAO.addUser(newUser);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle(bundle.getString("info"));
-            alert.setHeaderText(null);
-            alert.setContentText(bundle.getString("success"));
-
-            alert.showAndWait();
-            linkLogIn.fire();
+            Parent root = null;
+            try {
+                Stage myStage = new Stage();
+                FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
+                MainController lctrl = new MainController();
+                loaderr.setController(lctrl);
+                root = loaderr.load();
+                myStage.setTitle("ScienceChest");
+                myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                myStage.show();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

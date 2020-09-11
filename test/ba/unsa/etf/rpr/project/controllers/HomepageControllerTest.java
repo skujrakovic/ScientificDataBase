@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
+import org.testfx.util.WaitForAsyncUtils;
 
 import java.util.ResourceBundle;
 
@@ -40,11 +41,23 @@ class HomepageControllerTest {
 
     @Test
     public void testChangeLanguage(FxRobot robot){
+        //changing languange to bosnian
         robot.clickOn("#btnBosnian");
         Button btnSignUp = robot.lookup("#btnSignUp").queryAs(Button.class);
-        assertEquals("Registriraj se", btnSignUp.getText());
-        robot.clickOn("#btnEnglish");
         Button btnLogIn = robot.lookup("#btnLogIn").queryAs(Button.class);
+        Button btnContinue = robot.lookup("#btnContinue").queryAs(Button.class);
+        assertEquals("Registriraj se", btnSignUp.getText());
+        assertEquals("Prijavi se", btnLogIn.getText());
+        assertEquals("Nastavi bez registracije", btnContinue.getText());
+
+        //changing language to english
+        robot.clickOn("#btnEnglish");
+        btnSignUp = robot.lookup("#btnSignUp").queryAs(Button.class);
+        btnLogIn = robot.lookup("#btnLogIn").queryAs(Button.class);
+        btnContinue = robot.lookup("#btnContinue").queryAs(Button.class);
+        assertEquals("Sign up", btnSignUp.getText());
         assertEquals("Log in", btnLogIn.getText());
+        assertEquals("Continue without registration", btnContinue.getText());
+
     }
 }
