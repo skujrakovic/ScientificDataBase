@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -66,10 +63,20 @@ public class LogInController {
         }
     }
     public void LogIn(ActionEvent actionEvent){
+        scienceChestDAO.logInUser(fldUsername.getText());
+        if(scienceChestDAO.getCurrentUser()==null) {
+            ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(bundle.getString("info"));
+            alert.setHeaderText(null);
+            alert.setContentText(bundle.getString("noAccount"));
+            alert.showAndWait();
+            return;
+        }
         Parent root = null;
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-            scienceChestDAO.logInUser(fldUsername.getText());
+
             Stage myStage=new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
             MainController lctrl=new MainController();
