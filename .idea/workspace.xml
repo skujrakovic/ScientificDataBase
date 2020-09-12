@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/ResultsControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/AddControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/interfaces/IScienceChest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/interfaces/IScienceChest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/fxml/results.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/interfaces/IScienceChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/interfaces/IScienceChest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/utilities/ScienceChestDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/rpr-projekat/ba/unsa/etf/rpr/project/controllers/ResultsControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/ResultsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/controllers/ResultsControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +111,7 @@
       <recent name="ba.unsa.etf.rpr.project.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResultsControllerTest">
+  <component name="RunManager" selected="JUnit.AddControllerTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.Main" />
       <module name="rpr-projekat" />
@@ -130,15 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in rpr-projekat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rpr-projekat" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LogInControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpr-projekat" />
       <extension name="coverage">
         <pattern>
@@ -147,8 +135,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.project.controllers" />
-      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.controllers.LogInControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.controllers.AddControllerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in rpr-projekat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-projekat" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddControllerTest" />
         <item itemvalue="JUnit.ResultsControllerTest" />
+        <item itemvalue="JUnit.All in rpr-projekat" />
         <item itemvalue="JUnit.MainControllerTest (1)" />
         <item itemvalue="JUnit.SignUpControllerTest (2)" />
-        <item itemvalue="JUnit.LogInControllerTest" />
-        <item itemvalue="JUnit.All in rpr-projekat" />
       </list>
     </recent_temporary>
   </component>
@@ -274,14 +270,7 @@
       <workItem from="1599849281710" duration="4275000" />
       <workItem from="1599854265748" duration="7853000" />
       <workItem from="1599903290364" duration="14887000" />
-      <workItem from="1599941563763" duration="1816000" />
-    </task>
-    <task id="LOCAL-00006" summary="Created a view for signing up">
-      <created>1598635871235</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1598635871235</updated>
+      <workItem from="1599941563763" duration="2654000" />
     </task>
     <task id="LOCAL-00007" summary="Made changes to SignUp view &amp; added a SignUpController">
       <created>1598636975157</created>
@@ -619,14 +608,20 @@
       <option name="project" value="LOCAL" />
       <updated>1599919871454</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added tests for ResultsController">
+      <created>1599943422145</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1599943422147</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Filled the choiceboxes located in &quot;Add new scientific paper&quot; view" />
     <MESSAGE value="Implemented functionality for adding new scientific paper" />
     <MESSAGE value="Enabled opening a link for the selected scientific paper" />
     <MESSAGE value="Enabled filtering of the results" />
@@ -651,7 +646,8 @@
     <MESSAGE value="Added checking if the account exists before logging in" />
     <MESSAGE value="Added tests for LogInController" />
     <MESSAGE value="Added tests for MainController and fixed some existing ones for LogInController and SignUpController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for MainController and fixed some existing ones for LogInController and SignUpController" />
+    <MESSAGE value="Added tests for ResultsController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for ResultsController" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
@@ -674,30 +670,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599684724959" />
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599941627879">
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599943420865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599941627879" />
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599943420865" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1599851451919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599851451919" />
-    <state width="1493" height="370" key="GridCell.Tab.0.bottom" timestamp="1599943397677">
+    <state width="1493" height="370" key="GridCell.Tab.0.bottom" timestamp="1599944302065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="370" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599943397677" />
-    <state width="1493" height="370" key="GridCell.Tab.0.center" timestamp="1599943397677">
+    <state width="1493" height="370" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599944302065" />
+    <state width="1493" height="370" key="GridCell.Tab.0.center" timestamp="1599944302064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="370" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599943397677" />
-    <state width="1493" height="370" key="GridCell.Tab.0.left" timestamp="1599943397677">
+    <state width="1493" height="370" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599944302064" />
+    <state width="1493" height="370" key="GridCell.Tab.0.left" timestamp="1599944302064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="370" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599943397677" />
-    <state width="1493" height="370" key="GridCell.Tab.0.right" timestamp="1599943397677">
+    <state width="1493" height="370" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599944302064" />
+    <state width="1493" height="370" key="GridCell.Tab.0.right" timestamp="1599944302065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="370" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599943397677" />
+    <state width="1493" height="370" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599944302065" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1599924843361">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -722,10 +718,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599905640703" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599919873887">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599943426478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599919873887" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599943426478" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599849360360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -734,10 +730,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1599905623590" />
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599941653639">
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599943696129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599941653639" />
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599943696129" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599858623082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

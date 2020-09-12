@@ -48,9 +48,6 @@ class ResultsControllerTest {
         theStage = stage;
     }
 
-
-
-
     @Test
     @Order(1)
     public void testFilterByGenre(FxRobot robot){
@@ -70,7 +67,6 @@ class ResultsControllerTest {
         for(ScientificPaper paper: papers){
             assertEquals(paper.getGenre(), robot.lookup("#choiceGenre").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem());
         }
-        robot.clickOn("#file").moveTo("#close").clickOn("#close");
     }
 
     @Test
@@ -92,7 +88,6 @@ class ResultsControllerTest {
         for(ScientificPaper paper: papers){
             assertEquals(paper.getType(), robot.lookup("#choiceType").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem());
         }
-        robot.clickOn("#file").moveTo("#close").clickOn("#close");
     }
 
     @Test
