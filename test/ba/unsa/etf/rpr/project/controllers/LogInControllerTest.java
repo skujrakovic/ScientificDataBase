@@ -74,6 +74,7 @@ class LogInControllerTest {
         robot.lookup("#btnLogOut").tryQuery().isEmpty();
         //checking if the alert dialog shows
         robot.lookup("OK").tryQuery().isPresent();
+        WaitForAsyncUtils.waitForFxEvents();
         robot.clickOn("OK");
     }
 }

@@ -14,12 +14,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableView;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
+import org.testfx.util.WaitForAsyncUtils;
 
 import javax.swing.text.TabableView;
 import java.util.ResourceBundle;
@@ -54,12 +56,9 @@ class ResultsControllerTest {
         //setting the items in tableview
         robot.lookup("#tableViewResults").queryAs(TableView.class).setItems(FXCollections.observableArrayList(ScienceChestDAO.getInstance().getScientificPaperByTitle("Advance")));
         //choosing a genre to filter by
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                robot.lookup("#choiceGenre").queryAs(ChoiceBox.class).getSelectionModel().select(ScientificPaperGenre.BIOLOGY);
-            }
-        });
+        robot.clickOn("#choiceGenre");
+        robot.type(KeyCode.DOWN);
+        robot.type(KeyCode.ENTER);
         //pressing the button which leads to filtering
         robot.clickOn("#btnConfirm");
         TableView table =robot.lookup("#tableViewResults").queryAs(TableView.class);
@@ -75,14 +74,12 @@ class ResultsControllerTest {
         //setting the items in tableview
         robot.lookup("#tableViewResults").queryAs(TableView.class).setItems(FXCollections.observableArrayList(ScienceChestDAO.getInstance().getScientificPaperByTitle("Advance")));
         //choosing a type to filter by
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                robot.lookup("#choiceType").queryAs(ChoiceBox.class).getSelectionModel().select(ScientificPaperType.JOURNAL);
-            }
-        });
+        robot.clickOn("#choiceType");
+        robot.type(KeyCode.DOWN);
+        robot.type(KeyCode.ENTER);
         //pressing the button which leads to filtering
         robot.clickOn("#btnConfirm");
+        WaitForAsyncUtils.waitForFxEvents();
         TableView table =robot.lookup("#tableViewResults").queryAs(TableView.class);
         ObservableList<ScientificPaper> papers = table.getItems();
         for(ScientificPaper paper: papers){
