@@ -84,4 +84,9 @@ public class ScientificPaper {
     public void setAuthors(ArrayList<String> authors) {
         this.authors = authors;
     }
+
+    @Override
+    public String toString() {
+        return title+", "+yearOfPublication;
+    }
 }

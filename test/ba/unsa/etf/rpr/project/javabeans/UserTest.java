@@ -8,11 +8,11 @@ class UserTest {
     @Test
     public void testConstructor(){
         User user = new User("Samija","Kujrakovic","skujrakovi1@etf.unsa.ba","skujrakovi1","somepassword10");
-        assertEquals(user.getName(),"Samija");
-        assertEquals(user.getSurname(),"Kujrakovic");
-        assertEquals(user.getEmail(),"skujrakovi1@etf.unsa.ba");
-        assertEquals(user.getUsername(),"skujrakovi1");
-        assertEquals(user.getPassword(),"somepassword10");
+        assertEquals("Samija",user.getName());
+        assertEquals("Kujrakovic",user.getSurname());
+        assertEquals("skujrakovi1@etf.unsa.ba",user.getEmail());
+        assertEquals("skujrakovi1",user.getUsername());
+        assertEquals("somepassword10",user.getPassword());
     }
     @Test
     public void testSetters(){
@@ -22,11 +22,11 @@ class UserTest {
         user.setEmail("Email");
         user.setPassword("Password");
         user.setUsername("Username");
-        assertEquals(user.getName(),"Name");
-        assertEquals(user.getSurname(),"Surname");
-        assertEquals(user.getEmail(),"Email");
-        assertEquals(user.getUsername(),"Username");
-        assertEquals(user.getPassword(),"Password");
+        assertEquals("Name",user.getName());
+        assertEquals("Surname",user.getSurname());
+        assertEquals("Email",user.getEmail());
+        assertEquals("Username",user.getUsername());
+        assertEquals("Password",user.getPassword());
     }
 
     @Test

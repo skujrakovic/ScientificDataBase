@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e33ed62-6e30-4312-8bde-1c5dc3d42e1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/javabeans/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/javabeans/ScientificPaperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/javabeans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/javabeans/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/javabeans/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-projekat/ba/unsa/etf/rpr/project/javabeans/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/javabeans/ScientificPaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/project/javabeans/ScientificPaper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/javabeans/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/project/javabeans/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,7 @@
       <recent name="ba.unsa.etf.rpr.project.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest">
+  <component name="RunManager" selected="JUnit.ba.unsa.etf.rpr.project.javabeans in rpr-projekat">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.project.Main" />
       <module name="rpr-projekat" />
@@ -174,15 +176,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ba.unsa.etf.rpr.project.controllers in rpr-projekat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ba.unsa.etf.rpr.project.javabeans in rpr-projekat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpr-projekat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ba.unsa.etf.rpr.project.controllers.*" />
+          <option name="PATTERN" value="ba.unsa.etf.rpr.project.javabeans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.project.controllers" />
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.project.javabeans" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ba.unsa.etf.rpr.project.javabeans in rpr-projekat" />
         <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.ResultsControllerTest" />
         <item itemvalue="JUnit.LogInControllerTest" />
         <item itemvalue="JUnit.All in rpr-projekat" />
-        <item itemvalue="JUnit.ba.unsa.etf.rpr.project.controllers in rpr-projekat" />
       </list>
     </recent_temporary>
   </component>
@@ -264,14 +266,7 @@
       <workItem from="1599849281710" duration="4275000" />
       <workItem from="1599854265748" duration="7853000" />
       <workItem from="1599903290364" duration="14887000" />
-      <workItem from="1599941563763" duration="3934000" />
-    </task>
-    <task id="LOCAL-00009" summary="Made changes to existing views">
-      <created>1598646723999</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1598646723999</updated>
+      <workItem from="1599941563763" duration="5093000" />
     </task>
     <task id="LOCAL-00010" summary="Created user database &amp; added SignUp button function">
       <created>1598650606846</created>
@@ -609,14 +604,20 @@
       <option name="project" value="LOCAL" />
       <updated>1599945062999</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added tests for User class">
+      <created>1599945570488</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1599945570488</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Enabled filtering of the results" />
     <MESSAGE value="Disabled the option for adding a new scientific paper to unregistered users" />
     <MESSAGE value="Fixed the search function" />
     <MESSAGE value="Added and implemented Log out button" />
@@ -641,17 +642,18 @@
     <MESSAGE value="Added tests for ResultsController" />
     <MESSAGE value="Added tests for AddController" />
     <MESSAGE value="Changed the way choicebox item is selected in ResultsControllerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the way choicebox item is selected in ResultsControllerTest" />
+    <MESSAGE value="Added tests for User class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for User class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598649308234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598649308234" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1599945301927">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1599945582862">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599945301927" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599945582862" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599254486314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -664,30 +666,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599684724959" />
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599945061641">
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2" timestamp="1599945569150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599945061641" />
+    <state x="352" y="0" width="980" height="811" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599945569150" />
     <state x="501" y="153" key="FileChooserDialogImpl" timestamp="1599851451919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599851451919" />
-    <state width="1493" height="278" key="GridCell.Tab.0.bottom" timestamp="1599945530578">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom" timestamp="1599946669132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="278" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599945530578" />
-    <state width="1493" height="278" key="GridCell.Tab.0.center" timestamp="1599945530578">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599946669132" />
+    <state width="1493" height="666" key="GridCell.Tab.0.center" timestamp="1599946669132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="278" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599945530578" />
-    <state width="1493" height="278" key="GridCell.Tab.0.left" timestamp="1599945530578">
+    <state width="1493" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599946669132" />
+    <state width="1493" height="666" key="GridCell.Tab.0.left" timestamp="1599946669132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="278" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599945530578" />
-    <state width="1493" height="278" key="GridCell.Tab.0.right" timestamp="1599945530578">
+    <state width="1493" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599946669132" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right" timestamp="1599946669132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="278" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599945530578" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599946669132" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1599924843361">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -712,10 +714,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599905640703" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599945067676">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599945572545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599945067676" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599945572545" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1599849360360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -724,10 +726,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1599905623590" />
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599945121716">
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599945619542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599945121716" />
+    <state x="540" y="115" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599945619542" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599858623082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
