@@ -15,8 +15,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
+import org.testfx.util.WaitForAsyncUtils;
 
 
+import java.io.File;
 import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -30,6 +32,8 @@ class LogInControllerTest {
 
     @Start
     public void start(Stage stage) throws Exception {
+        File dbfile = new File("database.db");
+        dbfile.delete();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
         ctrl = new LogInController();
@@ -49,7 +53,8 @@ class LogInControllerTest {
     public void testLogIn(FxRobot robot){
         //adding a user
         ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
-        scienceChestDAO.addUser(new User("test","test","test@test.com","test","test12345"));
+        User user = new User("test","test","test@test.com","test","test12345");
+        scienceChestDAO.addUser(user);
         //signing up as added user
         robot.clickOn("#fldUsername").write("test");
         robot.clickOn("#fldPassword").write("test12345");

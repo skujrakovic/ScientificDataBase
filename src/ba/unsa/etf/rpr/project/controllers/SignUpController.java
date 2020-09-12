@@ -99,26 +99,28 @@ public class SignUpController {
     }
 
     public void SignUp(ActionEvent actionEvent) {
-        if (fldUsername.getText().equals("") || fldUsername.getText().length() < 6)
-            fldUsername.getStyleClass().add("incorrectField");
         if (fldName.getText().equals("")) fldName.getStyleClass().add("incorrectField");
         if (fldSurname.getText().equals("")) fldSurname.getStyleClass().add("incorrectField");
+        if (fldUsername.getText().equals("") || fldUsername.getText().length() < 6)
+            fldUsername.getStyleClass().add("incorrectField");
         if (fldEmail.getText().equals("") || !fldEmail.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) fldEmail.getStyleClass().add("incorrectField");
         if (fldPassword.getText().equals("") || fldPassword.getText().length() < 8 || !fldPassword.getText().matches("^[a-zA-Z0-9]+$"))
             fldPassword.getStyleClass().add("incorrectField");
         if(scienceChestDAO.usernameExists(fldUsername.getText())) {
+            System.out.println("postoji");
             fldUsername.getStyleClass().add("incorrectField");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(bundle.getString("info"));
             alert.setHeaderText(null);
             alert.setContentText(bundle.getString("existingUsername"));
             alert.showAndWait();
-
+            return;
         }
         String check = fldUsername.getStyleClass().toString()+fldName.getStyleClass().toString()+fldSurname.getStyleClass().toString()+fldEmail.getStyleClass().toString()+fldPassword.getStyleClass().toString();
         if(!check.contains("incorrectField")) {
             User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
             scienceChestDAO.addUser(newUser);
+            scienceChestDAO.logInUser(newUser.getUsername());
             Parent root = null;
             try {
                 Stage myStage = new Stage();
