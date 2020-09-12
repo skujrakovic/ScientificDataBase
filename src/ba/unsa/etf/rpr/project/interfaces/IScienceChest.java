@@ -11,8 +11,8 @@ public interface IScienceChest {
     boolean usernameExists(String username);
     void logInUser(String username);
     ArrayList<String> getAuthorsForScientificPaper(Integer id);
-    void getScientificPaperByGenre(ScientificPaperGenre genre);
-    void getScientificPaperByTitle(String title);
+    ArrayList<ScientificPaper> getScientificPaperByGenre(ScientificPaperGenre genre);
+    ArrayList<ScientificPaper> getScientificPaperByTitle(String title);
     void addScientificPaper(ScientificPaper scientificPaper);
     void writeToFile(ScientificPaper scientificPaper);
 }

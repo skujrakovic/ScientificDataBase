@@ -25,18 +25,18 @@
          <children>
             <MenuBar prefHeight="32.0" prefWidth="498.0" HBox.hgrow="ALWAYS">
               <menus>
-                <Menu mnemonicParsing="false" text="%file">
+                <Menu fx:id="file" mnemonicParsing="false" text="%file">
                   <items>
                     <MenuItem fx:id="close" mnemonicParsing="false" text="%close" />
                       <MenuItem fx:id="print" mnemonicParsing="false" text="%print" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%edit">
+                <Menu fx:id="edit" mnemonicParsing="false" text="%edit">
                   <items>
                     <MenuItem fx:id="add" mnemonicParsing="false" text="%add" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%help">
+                <Menu fx:id="help" mnemonicParsing="false" text="%help">
                   <items>
                     <MenuItem fx:id="about" mnemonicParsing="false" text="%about" />
                   </items>

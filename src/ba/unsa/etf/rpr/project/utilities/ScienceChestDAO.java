@@ -186,7 +186,7 @@ public class ScienceChestDAO implements IScienceChest {
         return authors;
     }
 
-    public void getScientificPaperByGenre(ScientificPaperGenre genre) {
+    public ArrayList<ScientificPaper> getScientificPaperByGenre(ScientificPaperGenre genre) {
         results.clear();
         try {
             getScientificPapersByGenreQuery.setString(1, genre.name());
@@ -199,9 +199,10 @@ public class ScienceChestDAO implements IScienceChest {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return (ArrayList<ScientificPaper>) results;
     }
 
-    public void getScientificPaperByTitle(String title) {
+    public ArrayList<ScientificPaper> getScientificPaperByTitle(String title) {
         results.clear();
         try {
             String searchTitle = "%" + title + "%";
@@ -215,6 +216,7 @@ public class ScienceChestDAO implements IScienceChest {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return (ArrayList<ScientificPaper>) results;
     }
 
     public void addScientificPaper(ScientificPaper scientificPaper) {
