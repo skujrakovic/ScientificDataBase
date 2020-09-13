@@ -2,15 +2,16 @@ package ba.unsa.etf.rpr.project.controllers;
 
 import ba.unsa.etf.rpr.project.javabeans.User;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
@@ -32,8 +33,10 @@ class LogInControllerTest {
 
     @Start
     public void start(Stage stage) throws Exception {
+        ScienceChestDAO.disconnect();
         File dbfile = new File("database.db");
         dbfile.delete();
+        ScienceChestDAO dao = ScienceChestDAO.getInstance();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
         ctrl = new LogInController();
@@ -70,11 +73,15 @@ class LogInControllerTest {
         robot.clickOn("#fldUsername").write("DoesntExist");
         robot.clickOn("#fldPassword").write("invisible123");
         robot.clickOn("#btnLogIn");
-        //checking if the new window opens
-        robot.lookup("#btnLogOut").tryQuery().isEmpty();
-        //checking if the alert dialog shows
-        robot.lookup("OK").tryQuery().isPresent();
         WaitForAsyncUtils.waitForFxEvents();
-        robot.clickOn("OK");
+        //checking if the alert dialog shows
+        robot.lookup(".dialog-pane").tryQuery().isPresent();
+        DialogPane dialogPane = robot.lookup(".dialog-pane").queryAs(DialogPane.class);
+        Button okButton = (Button) dialogPane.lookupButton(ButtonType.OK);
+        robot.clickOn(okButton);
+        Platform.runLater(()->{
+            theStage.close();
+        });
     }
+
 }

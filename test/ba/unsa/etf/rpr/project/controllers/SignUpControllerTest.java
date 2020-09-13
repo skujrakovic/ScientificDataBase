@@ -2,16 +2,14 @@ package ba.unsa.etf.rpr.project.controllers;
 
 import ba.unsa.etf.rpr.project.javabeans.User;
 import ba.unsa.etf.rpr.project.utilities.ScienceChestDAO;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.testfx.api.FxRobot;
@@ -39,6 +37,7 @@ class SignUpControllerTest {
 
     @Start
     public void start (Stage stage) throws Exception {
+        ScienceChestDAO.disconnect();
         File dbfile = new File("database.db");
         dbfile.delete();
         ScienceChestDAO.getInstance();
@@ -61,7 +60,7 @@ class SignUpControllerTest {
     public void testSignUp(FxRobot robot){
         robot.clickOn("#btnSignUp");
         //checking if the new window opened
-        robot.lookup("#btnLogOut").tryQuery().isEmpty();
+        assertFalse(robot.lookup("#btnLogOut").tryQuery().isPresent());
         WaitForAsyncUtils.waitForFxEvents();
 
         TextField field = robot.lookup("#fldName").queryAs(TextField.class);
@@ -93,7 +92,8 @@ class SignUpControllerTest {
         robot.clickOn("#btnSignUp");
         //checking if the main window opened after a successful signup
         robot.lookup("#btnLogOut").tryQuery().isPresent();
-        robot.clickOn("#btnLogOut");
+        Button logOutButton = robot.lookup("#btnLogOut").queryAs(Button.class);
+        robot.clickOn(logOutButton);
     }
 
     @Test
@@ -120,5 +120,9 @@ class SignUpControllerTest {
         //testing the LogIn hyperlink
         robot.clickOn("#linkLogIn");
         robot.lookup("#btnLogIn").tryQuery().isPresent();
+        Platform.runLater(()->{
+            theStage.close();
+        });
     }
+
 }

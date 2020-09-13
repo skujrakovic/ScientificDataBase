@@ -1,10 +1,12 @@
 package ba.unsa.etf.rpr.project.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
@@ -58,6 +60,9 @@ class HomepageControllerTest {
         assertEquals("Sign up", btnSignUp.getText());
         assertEquals("Log in", btnLogIn.getText());
         assertEquals("Continue without registration", btnContinue.getText());
-
+        Platform.runLater(()->{
+            theStage.close();
+        });
     }
+
 }

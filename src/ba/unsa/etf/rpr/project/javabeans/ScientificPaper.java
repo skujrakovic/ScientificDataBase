@@ -27,6 +27,7 @@ public class ScientificPaper {
         this.yearOfPublication = yearOfPublication;
         this.genre = genre;
         this.type = type;
+        this.authors=new ArrayList<>();
     }
 
     public String getTitle() {

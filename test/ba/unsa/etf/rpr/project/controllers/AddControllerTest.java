@@ -9,10 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
@@ -72,5 +69,9 @@ class AddControllerTest {
         robot.clickOn("#areaSummary").write("This is a summary");
         robot.clickOn("#btnAdd");
         assertFalse(ScienceChestDAO.getInstance().getScientificPaperByTitle("Title").isEmpty());
+        Platform.runLater(()->{
+            theStage.close();
+        });
     }
+
 }

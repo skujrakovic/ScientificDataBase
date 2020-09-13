@@ -56,15 +56,17 @@ class ResultsControllerTest {
         //setting the items in tableview
         robot.lookup("#tableViewResults").queryAs(TableView.class).setItems(FXCollections.observableArrayList(ScienceChestDAO.getInstance().getScientificPaperByTitle("Advance")));
         //choosing a genre to filter by
-        robot.clickOn("#choiceGenre");
+        robot.lookup("#choiceGenre").tryQuery().isPresent();
+        robot.clickOn("#choiceGenre").moveTo(1,1);
         robot.type(KeyCode.DOWN);
         robot.type(KeyCode.ENTER);
         //pressing the button which leads to filtering
         robot.clickOn("#btnConfirm");
+        WaitForAsyncUtils.waitForFxEvents();
         TableView table =robot.lookup("#tableViewResults").queryAs(TableView.class);
         ObservableList<ScientificPaper> papers = table.getItems();
         for(ScientificPaper paper: papers){
-            assertEquals(paper.getGenre(), robot.lookup("#choiceGenre").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem());
+            assertEquals(robot.lookup("#choiceGenre").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem(), paper.getGenre());
         }
     }
 
@@ -74,7 +76,8 @@ class ResultsControllerTest {
         //setting the items in tableview
         robot.lookup("#tableViewResults").queryAs(TableView.class).setItems(FXCollections.observableArrayList(ScienceChestDAO.getInstance().getScientificPaperByTitle("Advance")));
         //choosing a type to filter by
-        robot.clickOn("#choiceType");
+        robot.lookup("#choiceType").tryQuery().isPresent();
+        robot.clickOn("#choiceType").moveTo(1,1);
         robot.type(KeyCode.DOWN);
         robot.type(KeyCode.ENTER);
         //pressing the button which leads to filtering
@@ -83,7 +86,7 @@ class ResultsControllerTest {
         TableView table =robot.lookup("#tableViewResults").queryAs(TableView.class);
         ObservableList<ScientificPaper> papers = table.getItems();
         for(ScientificPaper paper: papers){
-            assertEquals(paper.getType(), robot.lookup("#choiceType").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem());
+            assertEquals(robot.lookup("#choiceType").queryAs(ChoiceBox.class).getSelectionModel().getSelectedItem(), paper.getType());
         }
     }
 
@@ -101,5 +104,9 @@ class ResultsControllerTest {
         assertFalse(robot.lookup("#link").queryAs(Hyperlink.class).isDisabled());
         //checking if the button is disabled
         assertFalse(robot.lookup("#btnDownload").queryAs(Button.class).isDisabled());
+        Platform.runLater(()->{
+            theStage.close();
+        });
     }
+
 }
