@@ -33,32 +33,42 @@ public class SignUpController {
         fldUsername.setPromptText(bundle.getString("usernamePrompt"));
         fldPassword.setPromptText(bundle.getString("passwordPrompt"));
         fldName.textProperty().addListener((obs, oldName, newName) -> {
-                    if (fldName.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty()) {
+                    if (!newName.isEmpty()) {
                         fldName.getStyleClass().removeAll("incorrectField");
+                    }else{
+                        fldName.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldSurname.textProperty().addListener((obs, oldName, newName) -> {
-                    if (fldSurname.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty()) {
+                    if (!newName.isEmpty()) {
                         fldSurname.getStyleClass().removeAll("incorrectField");
+                    }else{
+                        fldSurname.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldEmail.textProperty().addListener((obs, oldName, newName) -> {
-                    if (fldEmail.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+                    if (!newName.isEmpty() && newName.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
                         fldEmail.getStyleClass().removeAll("incorrectField");
+                    }else{
+                        fldEmail.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldUsername.textProperty().addListener((obs, oldName, newName) -> {
-                    if (fldUsername.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.length()>=6) {
+                    if (!newName.isEmpty() && newName.length()>=6) {
                         fldUsername.getStyleClass().removeAll("incorrectField");
+                    }else{
+                        fldUsername.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldPassword.textProperty().addListener((obs, oldName, newName) -> {
-                    if (fldPassword.getStyleClass().toString().contains("incorrectField") && !newName.isEmpty() && newName.length()>=8 && newName.matches("^[a-zA-Z0-9]+$")) {
+                    if (!newName.isEmpty() && newName.length()>=8 && newName.matches("^[a-zA-Z0-9]+$")) {
                         fldPassword.getStyleClass().removeAll("incorrectField");
+                    }else{
+                        fldPassword.getStyleClass().add("incorrectField");
                     }
                 }
         );
