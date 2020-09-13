@@ -24,8 +24,9 @@ public class LogInController {
     public ImageView imgLogo;
     public Hyperlink linkSignUp;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
+
     @FXML
-    public void initialize(){
+    public void initialize() {
         imgLogo.setPickOnBounds(true);
         imgLogo.setOnMouseClicked((MouseEvent e) -> {
             Parent root = null;
@@ -45,26 +46,28 @@ public class LogInController {
             }
         });
     }
-    public void SignUp(ActionEvent actionEvent) {
+
+    public void signUp(ActionEvent actionEvent) {
         Parent root = null;
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"), bundle);
-            SignUpController sctrl=new SignUpController();
+            SignUpController sctrl = new SignUpController();
             loaderr.setController(sctrl);
             root = loaderr.load();
             myStage.setTitle("Sign Up");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void LogIn(ActionEvent actionEvent){
+
+    public void logIn(ActionEvent actionEvent) {
         scienceChestDAO.logInUser(fldUsername.getText());
-        if(scienceChestDAO.getCurrentUser()==null) {
+        if (scienceChestDAO.getCurrentUser() == null) {
             ResourceBundle bundle = ResourceBundle.getBundle("Translation");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(bundle.getString("info"));
@@ -77,15 +80,15 @@ public class LogInController {
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
-            MainController lctrl=new MainController();
+            MainController lctrl = new MainController();
             loaderr.setController(lctrl);
             root = loaderr.load();
             myStage.setTitle("ScienceChest");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }

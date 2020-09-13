@@ -20,6 +20,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class HomepageController {
     public Button btnSignUp, btnLogIn, btnContinue, btnEnglish, btnBosnian;
     private ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+
     @FXML
     public void initialize() {
         Image imageEnglish = new Image(getClass().getResourceAsStream("/images/britain.png"));
@@ -33,66 +34,69 @@ public class HomepageController {
         img1.setFitHeight(38);
         btnBosnian.setGraphic(img1);
     }
-    public void SignUp(ActionEvent actionEvent) {
+
+    public void signUp(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/signup.fxml"), bundle);
-            SignUpController sctrl=new SignUpController();
+            SignUpController sctrl = new SignUpController();
             loaderr.setController(sctrl);
             root = loaderr.load();
             myStage.setTitle("Sign Up");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void LogIn(ActionEvent actionEvent) {
+
+    public void logIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/login.fxml"), bundle);
-            LogInController lctrl=new LogInController();
+            LogInController lctrl = new LogInController();
             loaderr.setController(lctrl);
             root = loaderr.load();
             myStage.setTitle("Log In");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void Continue (ActionEvent actionEvent){
+    public void continueWithoutRegistration(ActionEvent actionEvent) {
         Parent root = null;
         try {
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/main.fxml"), bundle);
-            MainController lctrl=new MainController();
+            MainController lctrl = new MainController();
             loaderr.setController(lctrl);
             root = loaderr.load();
             myStage.setTitle("ScienceChest");
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void languageBosnian(ActionEvent actionEvent){
-        Locale newLocale = new Locale("bs","BA");
-        reloadHomepage(newLocale);
-    }
-    public void languageEnglish(ActionEvent actionEvent){
-        Locale newLocale = new Locale("en","EN");
+    public void languageBosnian(ActionEvent actionEvent) {
+        Locale newLocale = new Locale("bs", "BA");
         reloadHomepage(newLocale);
     }
 
-    public void reloadHomepage(Locale newLocale){
+    public void languageEnglish(ActionEvent actionEvent) {
+        Locale newLocale = new Locale("en", "EN");
+        reloadHomepage(newLocale);
+    }
+
+    public void reloadHomepage(Locale newLocale) {
         Stage primaryStage = (Stage) btnEnglish.getScene().getWindow();
         Locale.setDefault(newLocale);
         bundle = ResourceBundle.getBundle("Translation");

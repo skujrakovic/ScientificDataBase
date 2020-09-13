@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class PrintReport extends JFrame {
     public void showReport(Connection conn) throws JRException {
-        JRDesignQuery query= new JRDesignQuery();
+        JRDesignQuery query = new JRDesignQuery();
         query.setText("SELECT * FROM scientific_paper");
         String reportSrcFile = getClass().getResource("/reports/papers.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();

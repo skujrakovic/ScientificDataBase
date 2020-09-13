@@ -12,9 +12,12 @@ public enum ScientificPaperType {
         this.label = label;
     }
 
-    public String ScientificPaperType() { return label; }
+    public String ScientificPaperType() {
+        return label;
+    }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         return bundle.getString(label);
     }

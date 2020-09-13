@@ -25,10 +25,10 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
-public class ResultsController{
+public class ResultsController {
     public TableView<ScientificPaper> tableViewResults;
     public TableColumn<ScientificPaper, ArrayList<String>> colAuthors;
-    public TableColumn<ScientificPaper,String> colTitle;
+    public TableColumn<ScientificPaper, String> colTitle;
     public TableColumn<ScientificPaper, ScientificPaperGenre> colGenre;
     public TableColumn<ScientificPaper, ScientificPaperType> colType;
     public Hyperlink link;
@@ -38,33 +38,33 @@ public class ResultsController{
     private ObservableList<ScientificPaper> scientificPapersList;
     private ScienceChestDAO scienceChestDAO = ScienceChestDAO.getInstance();
 
-    public ResultsController(){
-        scientificPapersList= FXCollections.observableList(scienceChestDAO.getResults());
+    public ResultsController() {
+        scientificPapersList = FXCollections.observableList(scienceChestDAO.getResults());
     }
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         link.setDisable(true);
         btnDownload.setDisable(true);
         tableViewResults.setItems(scientificPapersList);
-        colType.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ScientificPaperType>("type"));
+        colType.setCellValueFactory(new PropertyValueFactory<ScientificPaper, ScientificPaperType>("type"));
         colTitle.setCellValueFactory(new PropertyValueFactory<ScientificPaper, String>("title"));
         colGenre.setCellValueFactory(new PropertyValueFactory<ScientificPaper, ScientificPaperGenre>("genre"));
-        colGenre.setCellFactory(column-> new TableCell<>() {
+        colGenre.setCellFactory(column -> new TableCell<>() {
             @Override
             protected void updateItem(ScientificPaperGenre genre, boolean empty) {
                 super.updateItem(genre, empty);
                 if (genre == null || empty) {
                     setGraphic(null);
                 } else {
-                    Label label = new Label (genre.toString());
+                    Label label = new Label(genre.toString());
                     label.setStyle("-fx-text-fill: white;");
                     setGraphic(label);
                 }
             }
         });
-        colAuthors.setCellValueFactory(new PropertyValueFactory<ScientificPaper,ArrayList<String>>("authors"));
-        colAuthors.setCellFactory(column-> new TableCell<>() {
+        colAuthors.setCellValueFactory(new PropertyValueFactory<ScientificPaper, ArrayList<String>>("authors"));
+        colAuthors.setCellFactory(column -> new TableCell<>() {
             @Override
             protected void updateItem(ArrayList<String> items, boolean empty) {
                 super.updateItem(items, empty);
@@ -86,7 +86,7 @@ public class ResultsController{
             if (newSelection != null) {
                 link.setDisable(false);
                 btnDownload.setDisable(false);
-            }else{
+            } else {
                 link.setDisable(true);
                 btnDownload.setDisable(true);
             }
@@ -96,11 +96,10 @@ public class ResultsController{
 
     }
 
-    public void OpenWebsite(ActionEvent actionEvent){
+    public void openWebsite(ActionEvent actionEvent) {
         try {
             URL url = new URL(tableViewResults.getSelectionModel().getSelectedItem().getLink());
-            if(Desktop.isDesktopSupported())
-            {
+            if (Desktop.isDesktopSupported()) {
                 try {
                     Desktop.getDesktop().browse(new URI(tableViewResults.getSelectionModel().getSelectedItem().getLink()));
                 } catch (IOException e1) {
@@ -110,22 +109,23 @@ public class ResultsController{
                 }
             }
         } catch (MalformedURLException e) {
-            System.out.println("String "+tableViewResults.getSelectionModel().getSelectedItem().getLink()+" does not represent a valid URL");
+            System.out.println("String " + tableViewResults.getSelectionModel().getSelectedItem().getLink() + " does not represent a valid URL");
         }
 
     }
 
-    public void Filter (ActionEvent actionEvent){
-        if(!choiceGenre.getSelectionModel().isEmpty()) {
-            scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getGenre().equals(choiceGenre.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
+    public void filter(ActionEvent actionEvent) {
+        if (!choiceGenre.getSelectionModel().isEmpty()) {
+            scientificPapersList = scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getGenre().equals(choiceGenre.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
         }
-        if(!choiceType.getSelectionModel().isEmpty()) {
-            scientificPapersList=scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getType().equals(choiceType.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));;
+        if (!choiceType.getSelectionModel().isEmpty()) {
+            scientificPapersList = scientificPapersList.stream().filter((scientificPaper -> scientificPaper.getType().equals(choiceType.getSelectionModel().getSelectedItem()))).collect(Collectors.toCollection(FXCollections::observableArrayList));
+            ;
         }
         tableViewResults.setItems(scientificPapersList);
     }
 
-    public void SaveFile(ActionEvent actionEvent){
+    public void saveFile(ActionEvent actionEvent) {
         Thread thread = new Thread(() -> {
             scienceChestDAO.writeToFile(tableViewResults.getSelectionModel().getSelectedItem());
         });

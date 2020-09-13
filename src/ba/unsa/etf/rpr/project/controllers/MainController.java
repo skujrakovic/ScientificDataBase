@@ -33,9 +33,14 @@ public class MainController {
     private ResourceBundle bundle = ResourceBundle.getBundle("Translation");
 
     @FXML
-    public void initialize(){
-        if(scienceChestDAO.getCurrentUser()==null) {add.setDisable(true); btnLogOut.setText(bundle.getString("homepage"));}
-        else {add.setDisable(false); btnLogOut.setText(bundle.getString("logout"));}
+    public void initialize() {
+        if (scienceChestDAO.getCurrentUser() == null) {
+            add.setDisable(true);
+            btnLogOut.setText(bundle.getString("homepage"));
+        } else {
+            add.setDisable(false);
+            btnLogOut.setText(bundle.getString("logout"));
+        }
         Image imageDecline = new Image(getClass().getResourceAsStream("/images/search2.png"));
         ImageView img = new ImageView(imageDecline);
         img.setFitWidth(20);
@@ -83,9 +88,9 @@ public class MainController {
             public void handle(ActionEvent e) {
                 Parent root = null;
                 try {
-                    Stage myStage=new Stage();
+                    Stage myStage = new Stage();
                     FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/add.fxml"), bundle);
-                    AddController lctrl=new AddController();
+                    AddController lctrl = new AddController();
                     loaderr.setController(lctrl);
                     root = loaderr.load();
                     myStage.setTitle(bundle.getString("add"));
@@ -103,7 +108,7 @@ public class MainController {
                 alert.setTitle(bundle.getString("info"));
                 alert.setHeaderText(null);
                 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                alert.setContentText(bundle.getString("credits1")+"\n"+bundle.getString("credits2")+"\n"+bundle.getString("credits3"));
+                alert.setContentText(bundle.getString("credits1") + "\n" + bundle.getString("credits2") + "\n" + bundle.getString("credits3"));
                 alert.showAndWait();
             }
         });
@@ -120,19 +125,19 @@ public class MainController {
         });
     }
 
-    public void openResultsFor (ScientificPaperGenre genre){
-            scienceChestDAO.getScientificPaperByGenre(genre);
-            openResults();
+    public void openResultsFor(ScientificPaperGenre genre) {
+        scienceChestDAO.getScientificPaperByGenre(genre);
+        openResults();
     }
 
-    public void Search (ActionEvent actionEvent){
-        if(fldSearch.getText().equals("")){
+    public void search(ActionEvent actionEvent) {
+        if (fldSearch.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(bundle.getString("info"));
             alert.setHeaderText(null);
             alert.setContentText(bundle.getString("typeSomething"));
             alert.showAndWait();
-        }else {
+        } else {
             scienceChestDAO.getScientificPaperByTitle(fldSearch.getText());
             if (scienceChestDAO.getResults() == null || scienceChestDAO.getResults().size() == 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -142,11 +147,11 @@ public class MainController {
                 alert.showAndWait();
                 return;
             }
-           openResults();
+            openResults();
         }
     }
 
-    public void openResults(){
+    public void openResults() {
         Parent root = null;
         try {
             Stage myStage = new Stage();
@@ -162,19 +167,19 @@ public class MainController {
         }
     }
 
-    public void LogOut(ActionEvent actionEvent){
+    public void logOut(ActionEvent actionEvent) {
         Parent root = null;
         try {
             scienceChestDAO.setCurrentUser(null);
-            Stage myStage=new Stage();
+            Stage myStage = new Stage();
             FXMLLoader loaderr = new FXMLLoader(getClass().getResource("/fxml/homepage.fxml"), bundle);
-            HomepageController lctrl=new HomepageController();
+            HomepageController lctrl = new HomepageController();
             loaderr.setController(lctrl);
             root = loaderr.load();
             myStage.setTitle(bundle.getString("homepage"));
             myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             myStage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
         }

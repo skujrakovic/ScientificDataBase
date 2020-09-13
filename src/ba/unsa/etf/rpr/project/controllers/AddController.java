@@ -30,7 +30,7 @@ public class AddController {
 
 
     @FXML
-    public void initialize (){
+    public void initialize() {
         choiceGenre.setItems(FXCollections.observableArrayList(ScientificPaperGenre.values()));
         choiceType.setItems(FXCollections.observableArrayList(ScientificPaperType.values()));
         fldTitle.textProperty().addListener((obs, oldName, newName) -> {
@@ -55,27 +55,29 @@ public class AddController {
                 }
         );
         choiceGenre.valueProperty().addListener((observableValue, scientificPaperGenreSingleSelectionModel, t1) -> {
-            if(t1!=null) choiceGenre.getStyleClass().removeAll("incorrectField");
+            if (t1 != null) choiceGenre.getStyleClass().removeAll("incorrectField");
         });
-        choiceType.valueProperty().addListener( (observableValue, scientificPaperTypeSingleSelectionModel, t1) -> {
-            if(t1!=null) choiceType.getStyleClass().removeAll("incorrectField");
+        choiceType.valueProperty().addListener((observableValue, scientificPaperTypeSingleSelectionModel, t1) -> {
+            if (t1 != null) choiceType.getStyleClass().removeAll("incorrectField");
         });
     }
 
-    public void Add(ActionEvent actionEvent){
+    public void addScientificPaper(ActionEvent actionEvent) {
         ScientificPaper paper = null;
         try {
-            if(fldTitle.getText().equals("")) fldTitle.getStyleClass().add("incorrectField");
-            if(fldAuthors.getText().equals("")) fldAuthors.getStyleClass().add("incorrectField");
-            if(fldLink.getText().equals("")) fldLink.getStyleClass().add("incorrectField");
-            if(choiceGenre.getSelectionModel().getSelectedItem()==null) choiceGenre.getStyleClass().add("incorrectField");
-            if(choiceType.getSelectionModel().getSelectedItem()==null) choiceType.getStyleClass().add("incorrectField");
-            String check=fldAuthors.getStyleClass().toString()+fldLink.getStyleClass().toString()+fldTitle.getStyleClass().toString()+choiceType.getStyleClass().toString()+choiceType.getStyleClass().toString();
-            if(!check.contains("incorrectField")) {
+            if (fldTitle.getText().equals("")) fldTitle.getStyleClass().add("incorrectField");
+            if (fldAuthors.getText().equals("")) fldAuthors.getStyleClass().add("incorrectField");
+            if (fldLink.getText().equals("")) fldLink.getStyleClass().add("incorrectField");
+            if (choiceGenre.getSelectionModel().getSelectedItem() == null)
+                choiceGenre.getStyleClass().add("incorrectField");
+            if (choiceType.getSelectionModel().getSelectedItem() == null)
+                choiceType.getStyleClass().add("incorrectField");
+            String check = fldAuthors.getStyleClass().toString() + fldLink.getStyleClass().toString() + fldTitle.getStyleClass().toString() + choiceType.getStyleClass().toString() + choiceType.getStyleClass().toString();
+            if (!check.contains("incorrectField")) {
                 paper = new ScientificPaper(fldTitle.getText(), fldLink.getText(), areaSummary.getText(), spinnerYear.getValue(), choiceGenre.getValue(), choiceType.getValue());
                 paper.setAuthors(new ArrayList<String>(Arrays.asList(fldAuthors.getText().toString().split(","))));
                 scienceChestDAO.addScientificPaper(paper);
-                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             }
         } catch (InvalidUrlException e) {
             System.out.println(e.getMessage());

@@ -73,7 +73,6 @@ class LogInControllerTest {
         robot.clickOn("#fldUsername").write("DoesntExist");
         robot.clickOn("#fldPassword").write("invisible123");
         robot.clickOn("#btnLogIn");
-        WaitForAsyncUtils.waitForFxEvents();
         //checking if the alert dialog shows
         robot.lookup(".dialog-pane").tryQuery().isPresent();
         DialogPane dialogPane = robot.lookup(".dialog-pane").queryAs(DialogPane.class);

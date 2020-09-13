@@ -8,11 +8,18 @@ import java.util.ArrayList;
 
 public interface IScienceChest {
     void addUser(User user);
+
     boolean usernameExists(String username);
+
     void logInUser(String username);
+
     ArrayList<String> getAuthorsForScientificPaper(Integer id);
+
     ArrayList<ScientificPaper> getScientificPaperByGenre(ScientificPaperGenre genre);
+
     ArrayList<ScientificPaper> getScientificPaperByTitle(String title);
+
     void addScientificPaper(ScientificPaper scientificPaper);
+
     void writeToFile(ScientificPaper scientificPaper);
 }

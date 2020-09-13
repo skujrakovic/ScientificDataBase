@@ -27,7 +27,7 @@ public class ScientificPaper {
         this.yearOfPublication = yearOfPublication;
         this.genre = genre;
         this.type = type;
-        this.authors=new ArrayList<>();
+        this.authors = new ArrayList<>();
     }
 
     public String getTitle() {
@@ -88,6 +88,6 @@ public class ScientificPaper {
 
     @Override
     public String toString() {
-        return title+", "+yearOfPublication;
+        return title + ", " + yearOfPublication;
     }
 }

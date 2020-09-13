@@ -69,7 +69,7 @@
                   <TextField fx:id="fldUsername" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="fldEmail" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
                   <PasswordField fx:id="fldPassword" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" />
-                  <Button fx:id="btnSignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#SignUp" prefWidth="150.0" text="%signup" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                  <Button fx:id="btnSignUp" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#signUp" prefWidth="150.0" text="%signup" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin>
@@ -96,7 +96,7 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <children>
             <Label text="%signupQuestion" />
-            <Hyperlink fx:id="linkLogIn" onAction="#LogIn" text="%login" />
+            <Hyperlink fx:id="linkLogIn" onAction="#logIn" text="%login" />
          </children>
       </HBox>
    </children>

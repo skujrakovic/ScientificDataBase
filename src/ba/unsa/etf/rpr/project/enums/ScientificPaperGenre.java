@@ -19,10 +19,14 @@ public enum ScientificPaperGenre {
         this.label = label;
     }
 
-    public String ScientificPaperGenre() { return label; }
+    public String ScientificPaperGenre() {
+        return label;
+    }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        return bundle.getString((label.split(" "))[0]); }
+        return bundle.getString((label.split(" "))[0]);
+    }
 
 }

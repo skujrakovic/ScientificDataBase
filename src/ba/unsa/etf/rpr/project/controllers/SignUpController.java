@@ -35,7 +35,7 @@ public class SignUpController {
         fldName.textProperty().addListener((obs, oldName, newName) -> {
                     if (!newName.isEmpty()) {
                         fldName.getStyleClass().removeAll("incorrectField");
-                    }else{
+                    } else {
                         fldName.getStyleClass().add("incorrectField");
                     }
                 }
@@ -43,7 +43,7 @@ public class SignUpController {
         fldSurname.textProperty().addListener((obs, oldName, newName) -> {
                     if (!newName.isEmpty()) {
                         fldSurname.getStyleClass().removeAll("incorrectField");
-                    }else{
+                    } else {
                         fldSurname.getStyleClass().add("incorrectField");
                     }
                 }
@@ -51,23 +51,23 @@ public class SignUpController {
         fldEmail.textProperty().addListener((obs, oldName, newName) -> {
                     if (!newName.isEmpty() && newName.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
                         fldEmail.getStyleClass().removeAll("incorrectField");
-                    }else{
+                    } else {
                         fldEmail.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldUsername.textProperty().addListener((obs, oldName, newName) -> {
-                    if (!newName.isEmpty() && newName.length()>=6) {
+                    if (!newName.isEmpty() && newName.length() >= 6) {
                         fldUsername.getStyleClass().removeAll("incorrectField");
-                    }else{
+                    } else {
                         fldUsername.getStyleClass().add("incorrectField");
                     }
                 }
         );
         fldPassword.textProperty().addListener((obs, oldName, newName) -> {
-                    if (!newName.isEmpty() && newName.length()>=8 && newName.matches("^[a-zA-Z0-9]+$")) {
+                    if (!newName.isEmpty() && newName.length() >= 8 && newName.matches("^[a-zA-Z0-9]+$")) {
                         fldPassword.getStyleClass().removeAll("incorrectField");
-                    }else{
+                    } else {
                         fldPassword.getStyleClass().add("incorrectField");
                     }
                 }
@@ -91,7 +91,7 @@ public class SignUpController {
         });
     }
 
-    public void LogIn(ActionEvent actionEvent) {
+    public void logIn(ActionEvent actionEvent) {
         Parent root = null;
         try {
             Stage myStage = new Stage();
@@ -108,15 +108,16 @@ public class SignUpController {
         }
     }
 
-    public void SignUp(ActionEvent actionEvent) {
+    public void signUp(ActionEvent actionEvent) {
         if (fldName.getText().equals("")) fldName.getStyleClass().add("incorrectField");
         if (fldSurname.getText().equals("")) fldSurname.getStyleClass().add("incorrectField");
         if (fldUsername.getText().equals("") || fldUsername.getText().length() < 6)
             fldUsername.getStyleClass().add("incorrectField");
-        if (fldEmail.getText().equals("") || !fldEmail.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) fldEmail.getStyleClass().add("incorrectField");
+        if (fldEmail.getText().equals("") || !fldEmail.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"))
+            fldEmail.getStyleClass().add("incorrectField");
         if (fldPassword.getText().equals("") || fldPassword.getText().length() < 8 || !fldPassword.getText().matches("^[a-zA-Z0-9]+$"))
             fldPassword.getStyleClass().add("incorrectField");
-        if(scienceChestDAO.usernameExists(fldUsername.getText())) {
+        if (scienceChestDAO.usernameExists(fldUsername.getText())) {
             System.out.println("postoji");
             fldUsername.getStyleClass().add("incorrectField");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -126,8 +127,8 @@ public class SignUpController {
             alert.showAndWait();
             return;
         }
-        String check = fldUsername.getStyleClass().toString()+fldName.getStyleClass().toString()+fldSurname.getStyleClass().toString()+fldEmail.getStyleClass().toString()+fldPassword.getStyleClass().toString();
-        if(!check.contains("incorrectField")) {
+        String check = fldUsername.getStyleClass().toString() + fldName.getStyleClass().toString() + fldSurname.getStyleClass().toString() + fldEmail.getStyleClass().toString() + fldPassword.getStyleClass().toString();
+        if (!check.contains("incorrectField")) {
             User newUser = new User(fldName.getText(), fldSurname.getText(), fldEmail.getText(), fldUsername.getText(), fldPassword.getText());
             scienceChestDAO.addUser(newUser);
             scienceChestDAO.logInUser(newUser.getUsername());
